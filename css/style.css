@@ -24,7 +24,7 @@ body{
 .cabecalho_2{
     height: 50px;
     width: 100%;
-    background-color: rgb(228, 232, 240);
+    background-color: #082036;
 
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ body{
 .cabecalho{
     height: 50px;
     width: 150vw;
-    background-color: #072F54;
+    background-color: #082036;
 
     display: flex;
     justify-content: center;
@@ -125,7 +125,7 @@ body{
     color: rgba(0, 75, 141, 0.43);
 }
 
-/* Segunda Página */
+/* Página Pesagem */
 .pagina_de_pesagem{
     height: 100vh;    
 }
@@ -174,9 +174,9 @@ select{
   width: 200px; 
 }
 
-.historico_pagina_pesagem>.botoes{
-    color: white;
-}
+/* .historico_pagina_pesagem>.botoes{
+    background-color: !important;
+} */
 
 .botao_enviar{
     display: flex!important;
@@ -196,15 +196,19 @@ select{
 }
 .botao_enviar:hover{
     transition: 0.3s;
-    background-color: var(--color-secundaria) !important;
+    background-color: #072F54 !important;
     scale: 1.02;
+}
+
+.titulo{
+    color: #072F54;
 }
 
 .listas{
     min-width: 100% !important;
 }
 
-/* Terceira Página */
+/* Página  de Login */
 .pag_de_login{
     height: 100vh;
     width: 100%;
@@ -236,19 +240,34 @@ select{
 }
 
 .fundo_login>h5{
+    padding: 10px 10px 10px 10px;
     color: white;
     font-family: "nunito";
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 5px;
     text-align: center;
 }
 
-.email{
-    margin-left: 50px;
+.titulo_login{
+    color: #f2f2f2;
+    font-size: 20px;
 }
 
-.email>div{
-    width: 400px;
+.email{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.senha{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.email>div,.senha>div{
+    margin-top: 10px;
+    width: 100%;
 }
 
 .icone_de_login_2:hover{
@@ -257,6 +276,16 @@ select{
 
 .icone_de_login:hover{
     color: var(--color-secundaria);
+}
+.campo_redefinir_senha{
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.campo_redefinir_senha>.esqueceu_senha{
+    display: flex;
+    justify-content: end;
 }
 
 @media screen and (max-width: 768px){
