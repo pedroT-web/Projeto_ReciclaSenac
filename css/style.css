@@ -1,0 +1,130 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@font-face {
+    font-family: "nunito";
+    src: url(../font/Nunito-VariableFont_wght.ttf);
+}
+
+*{
+    margin:0;
+}
+body{
+    overflow-x: hidden;
+}
+.pagina_inicial{
+    display: flex;
+    justify-content: center;
+
+    height: 100vh;
+}
+.cabecalho_2{
+    height: 50px;
+    width: 100%;
+    background-color: #F7941E;
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+.cabecalho{
+    height: 50px;
+    width: 150vw;
+    background-color: #004B8D;
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+.paginas_header{
+    list-style: none;
+    
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+
+    
+}
+.itens_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.botoes_header{
+    text-decoration: none;
+    color: #ffffff;
+
+    font-size: 18px;
+    font-family: "nunito";
+    margin-left: 30px;
+}
+.icone_de_login{
+    font-size: 40px;
+    color: #ffff;
+
+    margin-right: 30px;
+}
+.container_imagen{
+    height: 450px;
+    width: 600px;
+
+
+    background-image: url(../img/logo_senac.png);
+    background-size: cover;
+    background-position: top;
+}
+.container_itens_pag_inicial{
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.container_itens_pag_inicial>h1{
+    font-family: "nunito";
+    font-size: 48px;
+    font-weight: 800;
+    color: #004B8D;
+}
+.container_itens_pag_inicial>h3{
+    font-family: "nunito";
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(0, 75, 141, 0.43);
+}
+
+/* Segunda Página */
+.pagina_de_pesagem{
+    height: 100vh;
+
+    padding-top: 50px;
+}
+.espacamento_input{
+    margin-top: 100px;
+    justify-content: center;
+    gap: 40px;
+    margin-left: 50px;
+}
+#nome{
+
+    font-family: "nunito";
+    border-radius: 15px;
+    border: none;
+
+    height: 80px;
+    width: 100%;
+    background-color: #004B8D;
+}
+
+
+@media screen and (max-width: 768px){
+    .container_imagen{
+        width: 100%;
+        background-position: left;
+    }
+    .cabecalho{
+        width: 100vw;
+    }
+}
