@@ -143,8 +143,6 @@ body{
     padding-top: 50px;
     justify-content: center;
     gap: 40px;
-
-    
 }
 #nome{
     font-family: "nunito";
@@ -169,6 +167,10 @@ body{
     height: 100vh;
 
     text-align: center;
+
+    background-color: rgb(247, 148, 30, 0.8);
+    border-radius: 15px;
+    margin-left: 100px;
 }
 
 label{
@@ -341,18 +343,26 @@ select{
 
 /* Página Histórico */
 .pag_historico{
-    height: 100vh;  
-    display: flex;
-    justify-content: center;
+    height: 110vh;  
+}
+
+.agrupamento_historico{
+    height: 100%;
+    width: 100%;
+
+    padding: 40px;
+    margin: 0;
+
 }
 .local_historico{
-    margin: 50px 20px 0px 20px;
+    margin: 50px 20px 0px 50px;
     display: flex;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-radius: 15px;
 
     background-color: rgb(247, 148, 30, 0.8);
-    width: 100%;
+
+    height: 85%;
+    width: 95%;
 }
 
 .espacamento_historico{
@@ -367,6 +377,27 @@ select{
     width: 80%;
 }
 
+.botao_relatorio{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+
+    height: 50px;
+    width: 200px;
+    background-color: #082036 !important;
+    color: #f2f2f2 !important;
+    transition: 0.3s!important;
+
+    margin-top: 45px !important;
+    margin-right: 25px !important;
+
+}
+
+.botao_relatorio:hover{
+    transition: 0.3s;
+    background-color: #F7941E !important;
+    scale: 1.02;
+}
 
 @media screen and (max-width: 768px){
     .container_imagen{
@@ -389,7 +420,7 @@ select{
         width: 100%;
     }
     .historico_pagina_pesagem{
-        
+        margin: 0;
         width: 100%;
     }
 
@@ -400,12 +431,28 @@ select{
     .fundo_login{
         width: 400px;
     }
+
+    .local_historico{
+        margin-left: 0;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 1199px){
     .container_imagen{
         width: 100%;
         background-position: left;
+    }
+      .historico_pagina_pesagem{
+        
+        margin-left:50px;
+        margin-right:50px;
+        width: 93%;
+    }
+
+     .local_historico{
+        margin-left: 0;
+        width: 100%;
     }
 }
 
