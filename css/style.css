@@ -1,3 +1,8 @@
+:root{
+    --color-principal: rgb(0, 75, 141);
+    --color-secundaria: #F7941E;
+}
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @font-face {
     font-family: "nunito";
@@ -19,7 +24,7 @@ body{
 .cabecalho_2{
     height: 50px;
     width: 100%;
-    background-color: #F7941E;
+    background-color: rgb(228, 232, 240);
 
     display: flex;
     justify-content: center;
@@ -29,7 +34,7 @@ body{
 .cabecalho{
     height: 50px;
     width: 150vw;
-    background-color: #004B8D;
+    background-color: #072F54;
 
     display: flex;
     justify-content: center;
@@ -50,6 +55,9 @@ body{
     justify-content: space-between;
     width: 100%;
 }
+
+
+
 .botoes_header{
     text-decoration: none;
     color: #ffffff;
@@ -58,12 +66,36 @@ body{
     font-family: "nunito";
     margin-left: 30px;
 }
+
+.botoes_header:hover{
+    color:#F7941E;
+}
+
+.botoes_header_2{
+    text-decoration: none;
+    color: #ffffff;
+
+    font-size: 18px;
+    font-family: "nunito";
+    margin-left: 30px;
+}
+
+.botoes_header_2:hover{
+    color: var(--color-principal);
+}
 .icone_de_login{
     font-size: 40px;
     color: #ffff;
 
     margin-right: 30px;
 }
+.icone_de_login_2{
+    font-size: 40px;
+    color: #ffff;
+
+    margin-right: 30px;
+}
+
 .container_imagen{
     height: 450px;
     width: 600px;
@@ -84,7 +116,7 @@ body{
     font-family: "nunito";
     font-size: 48px;
     font-weight: 800;
-    color: #004B8D;
+    color: var(--color-principal);
 }
 .container_itens_pag_inicial>h3{
     font-family: "nunito";
@@ -96,7 +128,6 @@ body{
 /* Segunda Página */
 .pagina_de_pesagem{
     height: 100vh;    
-    background-color: rgb(0, 76, 143);
 }
 .espacamento_input{
     padding-top: 50px;
@@ -105,11 +136,13 @@ body{
 }
 #nome{
     font-family: "nunito";
-    border: 1px solid black;
+    border: 1px solid rgba(34, 36, 38, .15);
 
     height: 50px;
     width: 100%;
+    border-radius: 5px;
 
+    background-color: #fff;
     color: black;
 }
 #nome::placeholder{
@@ -118,20 +151,16 @@ body{
 }
 
 .historico_pagina_pesagem{
-    
+    margin-top: 30px;
     color: white;
     
     height: 100vh;
-    border-left: 1px solid black;
-    /* border-top: 1px solid black; */
-
-    background-color: rgb(0, 76, 143);
 
     text-align: center;
 }
 
 label{
-    color: white;
+    color: black;
     font-family: "nunito";
 }
 
@@ -140,13 +169,94 @@ select{
   background-color: #f2f2f2;
   border: 1px solid black;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 5px;
   color: black;
   width: 200px; 
 }
 
 .historico_pagina_pesagem>.botoes{
     color: white;
+}
+
+.botao_enviar{
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+
+    height: 50px;
+    width: 150px;
+    background-color: var(--color-secundaria) !important;
+    color: #f2f2f2 !important;
+    transition: 0.3s!important;
+}
+
+.campo_botao_enviar{
+    display: flex;
+    justify-content: end;
+}
+.botao_enviar:hover{
+    transition: 0.3s;
+    background-color: var(--color-secundaria) !important;
+    scale: 1.02;
+}
+
+.listas{
+    min-width: 100% !important;
+}
+
+/* Terceira Página */
+.pag_de_login{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo_login{
+    height: 600px;
+    width: 600px;
+    border-radius: 15px;
+
+    background-color: var(--color-principal);
+    box-shadow:5px 3px 5px 3px rgba(0, 75, 141, 0.43)
+}
+
+.fundo_login:hover{
+    scale: 1.03;
+}
+
+.fundo_login>h4{
+    color: white;
+    font-family: "nunito";
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.fundo_login>h5{
+    color: white;
+    font-family: "nunito";
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.email{
+    margin-left: 50px;
+}
+
+.email>div{
+    width: 400px;
+}
+
+.icone_de_login_2:hover{
+    color: var(--color-principal);
+}
+
+.icone_de_login:hover{
+    color: var(--color-secundaria);
 }
 
 @media screen and (max-width: 768px){
@@ -163,7 +273,12 @@ select{
         width: 100%;
     }
     .historico_pagina_pesagem{
-        height: 100vh;
+        
         width: 100%;
     }
+
+    .botao_enviar{
+        margin-bottom: 50px!important;
+    }
+    
 }

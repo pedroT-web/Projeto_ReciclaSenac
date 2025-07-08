@@ -8,9 +8,9 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <link href="./css/bootstrap-grid.min.css" rel="stylesheet">
 
@@ -24,12 +24,12 @@
             <nav class="itens_header">
                 <div></div>
                 <ul class="paginas_header">
-                    <li><a href="#pagina_inicial" class="botoes_header">Inicio</a></li>
-                    <li><a href="#pagina_de_pesagem" class="botoes_header">Pesagem</a></li>
-                    <li><a href="#" class="botoes_header">Histórico</a></li>
+                    <li><a href="./index.html" class="botoes_header">Inicio</a></li>
+                    <li><a href="./pesagem.html" class="botoes_header">Pesagem</a></li>
+                    <li><a href="./historico.html" class="botoes_header">Histórico</a></li>
                 </ul>
 
-                <i class="icone_de_login bi bi-person-circle"></i>
+                <a class="icone_login" href="./login.html"><i class="icone_de_login bi bi-person-circle"></i></a>
             </nav>
         </header>
     </div>
@@ -43,75 +43,8 @@
             <h3 class="descricao_titulo">Sistema de reciclagem do senac</h3>
         </div>
     </main>
-
-    <!-- Cabeçalho Página de pesagem -->
-    <div class="row">
-        <header class="cabecalho_2">
-            <nav class="itens_header">
-                <div></div>
-                <ul class="paginas_header">
-                    <li><a href="#pagina_inicial" class="botoes_header">Inicio</a></li>
-                    <li><a href="#pagina_de_pesagem" class="botoes_header">Pesagem</a></li>
-                    <li><a href="#" class="botoes_header">Histórico</a></li>
-                </ul>
-
-                <i class="icone_de_login bi bi-person-circle"></i>
-            </nav>
-        </header>
-    </div>
-
-    <!-- Página de Pesagem -->
-    <main class="pagina_de_pesagem" id="pagina_de_pesagem">
-        <div class="row">
-            <section class="espacamento_input col-sm-8 col-md-6 col-lg-6 col-6">
-                <div class="col-8 ms-3">
-                    <label for="nome">Nome Do Funcionário</label>
-                    <br>
-                    <select class="campos_pag_peso ui search dropdow">
-                        <option value="">Escolha o funcionário que executou a pesagem</option>
-                        <option value="1">Cleusa Maria Gonçalves</option>
-                        <option value="2">Janete de Souza Lima</option>
-                        <option value="3">Janete Maria de Farias Barros da Silva</option>
-                        <option value="4">João de Carvalho</option>
-                        <option value="5">Mirian de Souza dos Santos</option>
-                        <option value="6">Rosa Maria Moraes</option>
-                        <option value="0">Larissa Roveran Luz</option>
-                    </select><br><br><br>
-                </div>
-                <div class="col-8 ms-3">
-                    <label for="nome">Tipo Do Material</label>
-                    <br>
-                    <select class="campos_pag_peso" name="tipo_material" required="required">
-                        <option value="">Escolha o Tipo Do Material Que foi pesado</option>
-                        <option value="Recíclavel">Recíclavel</option>
-                        <option value="Não Recíclavel">Não Recíclavel</option>
-                    </select><br><br><br>
-                </div>
-                <div class="col-8 ms-3">
-                    <label for="nome">Peso</label>
-                    <br>
-                    <input class="campos_pag_peso" type="number" id="nome" name="nome" placeholder="Digite o peso em KG"
-                        required><br><br><br>
-                </div>
-                <div class="col-8 ms-3">
-                    <label for="nome">Data</label>
-                    <br>
-                    <input class="campo_data" type="date" id="nome" name="nome" placeholder=""
-                        required><br><br><br>
-                </div>
-            </section>
-            <section class="historico_pagina_pesagem col-sm-8 col-md-6 col-lg-6 col-6">
-                <h3 class="mt-2">Históricos Rápidos</h3>
-                <div class=" ui basic buttons">
-                    <button class="botoes ui button">Diário</button>
-                    <button class="botoes ui button">Semanal</button>
-                    <button class="botoes ui button">Mensal</button>
-                </div>
-            </section>
-
-        </div>
-    </main>
 </body>
+
 <script>
     $('.campos_pag_peso').dropdown()
 </script>
