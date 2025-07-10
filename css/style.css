@@ -224,10 +224,12 @@ select{
     border-radius: 15px;
 
     background-color: var(--color-principal);
-    box-shadow:5px 3px 5px 3px rgba(0, 75, 141, 0.43)
+    box-shadow:5px 3px 5px 3px rgba(0, 75, 141, 0.43);
+    transition: 0.5s;
 }
 
 .fundo_login:hover{
+    transition: 0.5s;
     scale: 1.03;
 }
 
@@ -287,6 +289,21 @@ select{
     display: flex;
     justify-content: end;
 }
+
+.esqueceu_senha{
+    color: white;
+    font-size: 16px; 
+    gap: 5px;
+}
+.esqueceu_senha> a{
+    text-decoration: none;
+    color: var(--color-secundaria);
+}
+.esqueceu_senha> a:hover{
+    color: white;
+    transition: 0.2s;
+}
+
 
 @media screen and (max-width: 768px){
     .container_imagen{
