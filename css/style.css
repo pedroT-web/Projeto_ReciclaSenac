@@ -18,8 +18,9 @@ body{
 .pagina_inicial{
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    height: 100vh;
+    height: 130vh;
 }
 .cabecalho_2{
     height: 50px;
@@ -97,10 +98,10 @@ body{
 }
 
 .container_imagen{
-    height: 450px;
+    height: 500px;
     width: 600px;
 
-
+    margin-top: 50px;
     background-image: url(../img/logo_senac.png);
     background-size: cover;
     background-position: top;
@@ -133,6 +134,8 @@ body{
     padding-top: 50px;
     justify-content: center;
     gap: 40px;
+
+    
 }
 #nome{
     font-family: "nunito";
@@ -174,9 +177,6 @@ select{
   width: 200px; 
 }
 
-/* .historico_pagina_pesagem>.botoes{
-    background-color: !important;
-} */
 
 .botao_enviar{
     display: flex!important;
@@ -205,7 +205,7 @@ select{
 }
 
 .listas{
-    min-width: 100% !important;
+    width: 100% !important;
 }
 
 /* Página  de Login */
@@ -219,8 +219,9 @@ select{
 }
 
 .fundo_login{
-    height: 600px;
+    height: 450px;
     width: 600px;
+
     border-radius: 15px;
 
     background-color: var(--color-principal);
@@ -262,7 +263,7 @@ select{
 }
 
 .senha{
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -304,12 +305,35 @@ select{
     transition: 0.2s;
 }
 
+.espacamento_enviar{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.botao_login{
+    text-decoration: none;
+    color: var(--color-secundaria);
+    background-color: #f2f2f2;
+    padding: 15px 70px 15px 70px;
+    border:1px solid #F7941E;
+    border-radius: 10px;
+    margin-top: 20px;
+}
 
 @media screen and (max-width: 768px){
     .container_imagen{
         width: 100%;
         background-position: left;
+
+        height: 400px;
     }
+
+    .espacamento_input{
+        margin-left: 20px;
+    }
+
     .cabecalho{
         width: 100vw;
     }
@@ -327,4 +351,21 @@ select{
         margin-bottom: 50px!important;
     }
     
+    .fundo_login{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1199px){
+    .container_imagen{
+        width: 100%;
+        background-position: left;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .container_imagen{
+        width: 100%;
+        background-position: left;
+    }
 }
