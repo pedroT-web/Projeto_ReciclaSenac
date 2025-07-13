@@ -96,7 +96,16 @@ body{
 
     margin-right: 30px;
 }
+.icone_sair{
+    font-size: 40px;
+    color: #ffff;
 
+    margin-right: 30px;
+}
+.icone_sair:hover{
+    transition: 0.2s;
+    color:#F7941E;
+}
 .container_imagen{
     height: 500px;
     width: 600px;
@@ -320,6 +329,19 @@ select{
     border:1px solid #F7941E;
     border-radius: 10px;
     margin-top: 20px;
+
+    transition: 0.2s;
+}
+
+.botao_login:hover{
+    transition: 0.2s;
+    color:#f2f2f2;
+    background-color: var(--color-secundaria);
+}
+
+/* Página Histórico */
+.pag_historico{
+    height: 100vh;  
 }
 
 @media screen and (max-width: 768px){
