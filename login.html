@@ -52,7 +52,8 @@
                         <input type="password" placeholder="Digite a senha">
                     </div>
                     <div class="campo_redefinir_senha">
-                        <label class="esqueceu_senha">Esqueceu a senha? <a href="#">Redefinir Senha</a></label>
+                        <label class="esqueceu_senha">Esqueceu a senha? <a href="#"
+                                onclick="abrirRedefinicao()">Redefinir Senha</a></label>
                     </div>
 
                 </div>
@@ -60,6 +61,21 @@
                     <a href="./historico.html" class="botao_login">Entrar</a>
                 </div>
             </div>
+
+            <div class="redefinir_senha" id="redefinicao_senha">
+                <div class="campo_redefinicao">
+                    <button class="fechar" id="fechar_botao">X</button>
+                    <h1>Redefinir Senha</h1>
+                    <input>
+                    <h5></h5>
+                    <h5></h5>
+                    <h5></h5>
+                    <input>
+                    <button></button>
+                </div>
+            </div>
         </div>
     </section>
+
+    <script src="./js/redefinirsenha.js"></script>
 </body>
