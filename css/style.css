@@ -1,28 +1,30 @@
-:root{
+:root {
     --color-principal: rgb(0, 75, 141);
     --color-secundaria: #F7941E;
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 @font-face {
     font-family: "nunito";
     src: url(../font/Nunito-VariableFont_wght.ttf);
 }
 
-*{
-    margin:0;
-}
-body{
+body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
-.pagina_inicial{
+
+.pagina_inicial {
     display: flex;
     justify-content: center;
     align-items: center;
 
     height: 130vh;
 }
-.cabecalho_2{
+
+.cabecalho_2 {
     height: 50px;
     width: 100%;
     background-color: #082036;
@@ -32,7 +34,8 @@ body{
 
     align-items: center;
 }
-.cabecalho{
+
+.cabecalho {
     height: 50px;
     width: 150vw;
     background-color: #082036;
@@ -42,15 +45,17 @@ body{
 
     align-items: center;
 }
-.paginas_header{
+
+.paginas_header {
     list-style: none;
-    
+
     display: flex;
 
     padding: 0;
-    margin: 0;    
+    margin: 0;
 }
-.itens_header{
+
+.itens_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,7 +64,7 @@ body{
 
 
 
-.botoes_header{
+.botoes_header {
     text-decoration: none;
     color: #ffffff;
 
@@ -68,11 +73,11 @@ body{
     margin-left: 30px;
 }
 
-.botoes_header:hover{
-    color:#F7941E;
+.botoes_header:hover {
+    color: #F7941E;
 }
 
-.botoes_header_2{
+.botoes_header_2 {
     text-decoration: none;
     color: #ffffff;
 
@@ -81,32 +86,37 @@ body{
     margin-left: 30px;
 }
 
-.botoes_header_2:hover{
+.botoes_header_2:hover {
     color: var(--color-principal);
 }
-.icone_de_login{
+
+.icone_de_login {
     font-size: 40px;
     color: #ffff;
 
     margin-right: 30px;
 }
-.icone_de_login_2{
+
+.icone_de_login_2 {
     font-size: 40px;
     color: #ffff;
 
     margin-right: 30px;
 }
-.icone_sair{
+
+.icone_sair {
     font-size: 40px;
     color: #ffff;
 
     margin-right: 30px;
 }
-.icone_sair:hover{
+
+.icone_sair:hover {
     transition: 0.2s;
-    color:#F7941E;
+    color: #F7941E;
 }
-.container_imagen{
+
+.container_imagen {
     height: 500px;
     width: 600px;
 
@@ -115,20 +125,23 @@ body{
     background-size: cover;
     background-position: top;
 }
-.container_itens_pag_inicial{
+
+.container_itens_pag_inicial {
     margin-top: 0;
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
-.container_itens_pag_inicial>h1{
+
+.container_itens_pag_inicial>h1 {
     font-family: "nunito";
     font-size: 48px;
     font-weight: 800;
     color: var(--color-principal);
 }
-.container_itens_pag_inicial>h3{
+
+.container_itens_pag_inicial>h3 {
     font-family: "nunito";
     font-size: 48px;
     font-weight: 800;
@@ -136,15 +149,17 @@ body{
 }
 
 /* Página Pesagem */
-.pagina_de_pesagem{
-    height: 100vh;    
+.pagina_de_pesagem {
+    height: 100vh;
 }
-.espacamento_input{
+
+.espacamento_input {
     padding-top: 50px;
     justify-content: center;
     gap: 40px;
 }
-#nome{
+
+#nome {
     font-family: "nunito";
     border: 1px solid rgba(34, 36, 38, .15);
 
@@ -155,15 +170,16 @@ body{
     background-color: #fff;
     color: black;
 }
-#nome::placeholder{
+
+#nome::placeholder {
     color: black;
     font-family: "nunito";
 }
 
-.historico_pagina_pesagem{
+.historico_pagina_pesagem {
     margin-top: 30px;
     color: white;
-    
+
     height: 100vh;
 
     text-align: center;
@@ -173,54 +189,55 @@ body{
     margin-left: 100px;
 }
 
-label{
+label {
     color: black;
     font-family: "nunito";
 }
 
-select{
-     appearance: none;
-  background-color: #f2f2f2;
-  border: 1px solid black;
-  padding: 8px;
-  border-radius: 5px;
-  color: black;
-  width: 200px; 
+select {
+    appearance: none;
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 5px;
+    color: black;
+    width: 200px;
 }
 
 
-.botao_enviar{
-    display: flex!important;
-    align-items: center!important;
-    justify-content: center!important;
+.botao_enviar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
     height: 50px;
     width: 150px;
     background-color: var(--color-secundaria) !important;
     color: #f2f2f2 !important;
-    transition: 0.3s!important;
+    transition: 0.3s !important;
 }
 
-.campo_botao_enviar{
+.campo_botao_enviar {
     display: flex;
     justify-content: end;
 }
-.botao_enviar:hover{
+
+.botao_enviar:hover {
     transition: 0.3s;
     background-color: #072F54 !important;
     scale: 1.02;
 }
 
-.titulo{
+.titulo {
     color: #072F54;
 }
 
-.listas{
+.listas {
     width: 100% !important;
 }
 
 /* Página  de Login */
-.pag_de_login{
+.pag_de_login {
     height: 100vh;
     width: 100%;
 
@@ -229,23 +246,23 @@ select{
     align-items: center;
 }
 
-.fundo_login{
+.fundo_login {
     height: 450px;
     width: 600px;
 
     border-radius: 15px;
 
     background-color: var(--color-principal);
-    box-shadow:5px 3px 5px 3px rgba(0, 75, 141, 0.43);
+    box-shadow: 5px 3px 5px 3px rgba(0, 75, 141, 0.43);
     transition: 0.5s;
 }
 
-.fundo_login:hover{
+.fundo_login:hover {
     transition: 0.5s;
     scale: 1.03;
 }
 
-.fundo_login>h4{
+.fundo_login>h4 {
     color: white;
     font-family: "nunito";
     font-size: 20px;
@@ -253,7 +270,7 @@ select{
     text-align: center;
 }
 
-.fundo_login>h5{
+.fundo_login>h5 {
     padding: 10px 10px 10px 10px;
     color: white;
     font-family: "nunito";
@@ -262,91 +279,95 @@ select{
     text-align: center;
 }
 
-.titulo_login{
+.titulo_login {
     color: #f2f2f2;
     font-size: 20px;
 }
 
-.email{
+.email {
     margin-top: 30px;
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.senha{
+.senha {
     margin-top: 40px;
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.email>div,.senha>div{
+.email>div,
+.senha>div {
     margin-top: 10px;
     width: 100%;
 }
 
-.icone_de_login_2:hover{
+.icone_de_login_2:hover {
     color: var(--color-principal);
 }
 
-.icone_de_login:hover{
+.icone_de_login:hover {
     color: var(--color-secundaria);
 }
-.campo_redefinir_senha{
+
+.campo_redefinir_senha {
     padding: 10px 10px 10px 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.campo_redefinir_senha>.esqueceu_senha{
+.campo_redefinir_senha>.esqueceu_senha {
     display: flex;
     justify-content: end;
 }
 
-.esqueceu_senha{
+.esqueceu_senha {
     color: white;
-    font-size: 16px; 
+    font-size: 16px;
     gap: 5px;
 }
-.esqueceu_senha> a{
+
+.esqueceu_senha>a {
     text-decoration: none;
     color: var(--color-secundaria);
 }
-.esqueceu_senha> a:hover{
+
+.esqueceu_senha>a:hover {
     color: white;
     transition: 0.2s;
 }
 
-.espacamento_enviar{
+.espacamento_enviar {
     width: 100%;
 
     display: flex;
     justify-content: center;
 }
 
-.botao_login{
+.botao_login {
     text-decoration: none;
     color: var(--color-secundaria);
     background-color: #f2f2f2;
     padding: 15px 70px 15px 70px;
-    border:1px solid #F7941E;
+    border: 1px solid #F7941E;
     border-radius: 10px;
     margin-top: 20px;
 
     transition: 0.2s;
 }
 
-.botao_login:hover{
+.botao_login:hover {
     transition: 0.2s;
-    color:#f2f2f2;
+    color: #f2f2f2;
     background-color: var(--color-secundaria);
 }
 
 /* Página Histórico */
-.pag_historico{
-    height: 110vh;  
+.pag_historico {
+    height: 110vh;
 }
 
-.agrupamento_historico{
+.agrupamento_historico {
     height: 100%;
     width: 100%;
 
@@ -354,7 +375,8 @@ select{
     margin: 0;
 
 }
-.local_historico{
+
+.local_historico {
     margin: 50px 20px 0px 50px;
     display: flex;
     border-radius: 15px;
@@ -365,99 +387,103 @@ select{
     width: 95%;
 }
 
-.espacamento_historico{
+.espacamento_historico {
     margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.botoes_acesso_historico{
+.botoes_acesso_historico {
     height: 40px;
     width: 80%;
 }
 
-.botao_relatorio{
-    display: flex!important;
-    align-items: center!important;
-    justify-content: center!important;
+.botao_relatorio {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
     height: 50px;
     width: 200px;
     background-color: #082036 !important;
     color: #f2f2f2 !important;
-    transition: 0.3s!important;
+    transition: 0.3s !important;
 
     margin-top: 45px !important;
     margin-right: 25px !important;
 
 }
 
-.botao_relatorio:hover{
+.botao_relatorio:hover {
     transition: 0.3s;
     background-color: #F7941E !important;
     scale: 1.02;
 }
 
-@media screen and (max-width: 768px){
-    .container_imagen{
+@media screen and (max-width: 768px) {
+    .container_imagen {
         width: 100%;
         background-position: left;
 
         height: 400px;
     }
 
-    .espacamento_input{
+    .espacamento_input {
         margin-left: 20px;
     }
 
-    .cabecalho{
+    .cabecalho {
         width: 100vw;
     }
 
-    .historico_pagina_pesagem>.botoes{
+    .historico_pagina_pesagem>.botoes {
         margin-left: 50px;
         width: 100%;
     }
-    .historico_pagina_pesagem{
+
+    .historico_pagina_pesagem {
         margin: 0;
-        width: 100%;
+        margin-left: 10px;
+        margin-right: 20px;
+        width: 95%;
     }
 
-    .botao_enviar{
-        margin-bottom: 50px!important;
+    .botao_enviar {
+        margin-bottom: 50px !important;
     }
-    
-    .fundo_login{
+
+    .fundo_login {
         width: 400px;
     }
 
-    .local_historico{
+    .local_historico {
         margin-left: 0;
         width: 100%;
     }
 }
 
-@media screen and (max-width: 1199px){
-    .container_imagen{
+@media screen and (min-width:769px) and (max-width: 1199px) {
+    .container_imagen {
         width: 100%;
         background-position: left;
     }
-      .historico_pagina_pesagem{
-        
-        margin-left:50px;
-        margin-right:50px;
+
+    .historico_pagina_pesagem {
+
+        margin-left: 50px;
+        margin-right: 50px;
         width: 93%;
     }
 
-     .local_historico{
+    .local_historico {
         margin-left: 0;
         width: 100%;
     }
 }
 
-@media screen and (min-width: 1200px){
-    .container_imagen{
+@media screen and (min-width: 1200px) {
+    .container_imagen {
         width: 100%;
         background-position: left;
     }
