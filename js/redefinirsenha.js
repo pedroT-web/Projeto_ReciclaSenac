@@ -9,3 +9,13 @@ function abrirRedefinicao(){
 })
 }   
 
+
+function atualizarPagina() {
+  location.reload();
+}
+
+function atualizarPagina2(){
+     location.reload();
+
+  alert('Cadastro Concluído')
+}

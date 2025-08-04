@@ -8,6 +8,8 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -15,6 +17,7 @@
     <link href="./css/bootstrap-grid.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 
 <body>
@@ -52,8 +55,14 @@
                         <input type="password" placeholder="Digite a senha">
                     </div>
                     <div class="campo_redefinir_senha">
-                        <label class="esqueceu_senha">Esqueceu a senha? <a href="#"
-                                onclick="abrirRedefinicao()">Redefinir Senha</a></label>
+                        <label class="esqueceu_senha">
+                            Esqueceu a senha? <a href="#" onclick="teste()">Redefinir Senha</a>
+                        </label>
+                    </div>
+                    <div class="campo_cadastro">
+                        <label class="cadastrar">
+                            Não tem cadastro? <a href="#" onclick="cadastro()">Cadastrar</a>
+                        </label>
                     </div>
 
                 </div>
@@ -61,21 +70,65 @@
                     <a href="./historico.html" class="botao_login">Entrar</a>
                 </div>
             </div>
-
-            <div class="redefinir_senha" id="redefinicao_senha">
-                <div class="campo_redefinicao">
-                    <button class="fechar" id="fechar_botao">X</button>
-                    <h1>Redefinir Senha</h1>
-                    <input>
-                    <h5></h5>
-                    <h5></h5>
-                    <h5></h5>
-                    <input>
-                    <button></button>
-                </div>
-            </div>
         </div>
     </section>
+
+    <div class="ui container campo_redefinicao">
+        <div class="ui modal primeiro">
+            <i class="close icon"></i>
+            <div class="header header_redefinicao">
+                <h1>Redefinir Senha</h1>
+            </div>
+            <div class="content redefinicao_senha">
+                <h5>Nova Senha</h5>
+                <input type="password" placeholder="Digite a nova senha" class="forms_redefinicao">
+                <h5>Confirmar Senha</h5>
+                <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao">
+                <br>
+                <br>
+            </div>
+            <div class="actions botoes_redefinir">
+                <button id="fechar_botao" onclick="atualizarPagina()">Cancelar</button>
+                <button id="salvar_senha" onclick="atualizarPagina2()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container campo_redefinicao">
+        <div class="ui modal segundo ">
+            <i class="close icon"></i>
+            <div class="header header_redefinicao">
+                <h1>Cadastrar</h1>
+            </div>
+            <div class="content redefinicao_senha">
+                <h5>Email</h5>
+                <input type="email" placeholder="Digite o seu Email" class="forms_redefinicao">
+                <h5>Senha</h5>
+                <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao">
+                <h5>Confirmar Senha</h5>
+                <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao">
+                <br>
+                <br>
+            </div>
+            <div class="actions botoes_redefinir">
+                <button id="fechar_botao" onclick="atualizarPagina()">Cancelar</button>
+                <button id="salvar_senha" onclick="atualizarPagina2()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function teste() {
+
+            $('.ui.modal.primeiro').modal('show')
+        }
+
+        function cadastro() {
+
+            $('.ui.modal.segundo').modal('show')
+        }
+    </script>
 
     <script src="./js/redefinirsenha.js"></script>
 </body>
