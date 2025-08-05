@@ -16,6 +16,9 @@ body {
     padding: 0;
 }
 
+
+/* ======================================== */
+/* Primeira Página */
 .pagina_inicial {
     display: flex;
     justify-content: center;
@@ -148,17 +151,26 @@ body {
     color: rgba(0, 75, 141, 0.43);
 }
 
+/* ======================================== */
+
 /* Página Pesagem */
 .pagina_de_pesagem {
     height: 100vh;
 }
 
+.lista_peso{
+    background-color: #F7941E !important;
+    color: white !important;
+}
+
+/* espacamento do input */
 .espacamento_input {
     padding-top: 50px;
     justify-content: center;
     gap: 40px;
 }
 
+/* Formatação dos input com lista */
 #nome {
     font-family: "nunito";
     border: 1px solid rgba(34, 36, 38, .15);
@@ -171,11 +183,13 @@ body {
     color: black;
 }
 
+/* Formatação dos itens dentro do input com lista */
 #nome::placeholder {
     color: black;
     font-family: "nunito";
 }
 
+/* Campo onde tem todo os itens do historico rápido na pagina de pesagem */
 .historico_pagina_pesagem {
     margin-top: 30px;
     color: white;
@@ -184,16 +198,58 @@ body {
 
     text-align: center;
 
-    background-color: rgb(247, 148, 30, 0.8);
     border-radius: 15px;
     margin-left: 100px;
 }
 
+.ui.buttons .botoes {
+    color: white !important;
+    background-color: #072f54f3 !important;
+}
+
+.ui.buttons .botoes:hover{
+    color: #072f54f3 !important;
+    background-color: white !important;
+    border: 2px solid #072f54f3 !important;
+}
+
+/* Tabela da pagina pesagem, o quanto ela usa de espaço */
+.tabela_historico_rapido {
+    height: 80%;
+}
+
+/* Itens das tabelas */
+/* Local dos Titulos */
+.ui.table thead th {
+    background-color: var(--color-secundaria) !important;
+    color: white !important;
+
+    font-family: "nunito"
+}
+
+/* Itens dentro da tabela */
+.itens_tabela {
+    color: white !important;
+    background-color: #faa53e;
+
+    font-family: "nunito"
+}
+
+.itens_tabela_segundo{
+    color: #faa53e !important;
+    background-color: #f2f2f2 !important;
+
+    font-family: "nunito";
+}
+
+
+/* formatação dos textos de identificacao dos inputs */
 label {
     color: black;
     font-family: "nunito";
 }
 
+/* Formatação dos nomes dentro do input dos funcionarios  */
 select {
     appearance: none;
     background-color: #f2f2f2;
@@ -205,6 +261,7 @@ select {
 }
 
 
+/* Formatação do botao de enviar na pagina de pesagem */
 .botao_enviar {
     display: flex !important;
     align-items: center !important;
@@ -217,24 +274,30 @@ select {
     transition: 0.3s !important;
 }
 
-.campo_botao_enviar {
-    display: flex;
-    justify-content: end;
-}
-
+/* Hover para quando o mouse passar por cima do botao enviar da pagina de pesagem */
 .botao_enviar:hover {
     transition: 0.3s;
     background-color: #072F54 !important;
     scale: 1.02;
 }
 
+/* Espaço onde está o botao enviar, para coloca-lo ao fim */
+.campo_botao_enviar {
+    display: flex;
+    justify-content: end;
+}
+
+/* Formatacao para o titulo da pagina de pesagem */
 .titulo {
     color: #072F54;
 }
 
+/* Deixar todos os inputs n pagina de pesagem do mesmo tamanho */
 .listas {
     width: 100% !important;
 }
+
+/* ======================================== */
 
 /* Página  de Login */
 .pag_de_login {
@@ -316,7 +379,8 @@ select {
     justify-content: space-between;
 }
 
-.campo_redefinir_senha>.esqueceu_senha, .campo_cadastro>.cadastrar {
+.campo_redefinir_senha>.esqueceu_senha,
+.campo_cadastro>.cadastrar {
     display: flex;
     justify-content: end;
 }
@@ -328,17 +392,19 @@ select {
     gap: 5px;
 }
 
-.esqueceu_senha>a, .cadastrar>a {
+.esqueceu_senha>a,
+.cadastrar>a {
     text-decoration: none;
     color: var(--color-secundaria);
 }
 
-.esqueceu_senha>a:hover, .cadastrar>a:hover {
+.esqueceu_senha>a:hover,
+.cadastrar>a:hover {
     color: white;
     transition: 0.2s;
 }
 
-.cadastrar{
+.cadastrar {
     color: white;
     font-size: 16px;
     gap: 5px;
@@ -368,6 +434,8 @@ select {
     color: #f2f2f2;
     background-color: var(--color-secundaria);
 }
+
+/* ======================================== */
 
 /* Página Histórico */
 .pag_historico {
@@ -429,17 +497,17 @@ select {
     scale: 1.02;
 }
 
-.ui.buttons .button{
+.ui.buttons .botoes_2 {
     color: white !important;
-    background-color: #F7941E !important;
+    background-color: #072f54f3 !important;
 }
 
-.ui.buttons .button:hover{
-    color: #F7941E !important;
+.ui.buttons .botoes_2:hover {
+    color: #072f54f3 !important;
     background-color: white !important;
-    border: 2px solid #F7941E !important;
+    border: 2px solid #072f54f3 !important;
 
-  
+
 }
 
 .ui.modal {
@@ -533,6 +601,9 @@ select {
     padding: 10px;
     padding-left: 20px;
 }
+
+/* ======================================== */
+/* Responsividade das páginas */
 
 @media screen and (max-width: 768px) {
     .container_imagen {

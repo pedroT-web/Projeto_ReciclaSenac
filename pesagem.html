@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recicla Senac</title>
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
@@ -72,12 +74,12 @@
                         <br>
                         <div class="ui right labeled input listas">
                             <input type="number" placeholder="Digite o peso">
-                            <div class="ui dropdown label">
+                            <div class="ui dropdown label lista_peso">
                                 <div class="text">Escolha o tipo de peso</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
-                                    <div class="item">KG</div>
-                                    <div class="item">G</div>
+                                    <div class="item">kg</div>
+                                    <div class="item">g</div>
                                 </div>
                             </div>
                         </div>
@@ -96,13 +98,60 @@
                 </div>
             </section>
             <section class="historico_pagina_pesagem col-sm-8 col-md-5 col-lg-5 col-6">
-                <h3 class="mt-2 titulo">Históricos Rápidos</h3>
-                <div class=" ui buttons">
-                    <button class="botoes ui button">Diário</button>
-                    <button class="botoes ui button">Semanal</button>
-                    <button class="botoes ui button">Mensal</button>
-                </div>
+                <h3 class="mt-2 titulo">Históricos Diários</h3>
+                <table class="ui celled striped table tabela_historico_rapido">
+                    <thead>
+                        <tr class="titulos_tabela">
+                            <th>Nome do Funcionário</th>
+                            <th>Tipo Material</th>
+                            <th>Peso</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="itens_tabela">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                        <tr class="itens_tabela_segundo">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                        <tr class="itens_tabela">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                        <tr class="itens_tabela_segundo">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                        <tr class="itens_tabela">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                        <tr class="itens_tabela_segundo">
+                            <td data-label="Nome do Funcionário">James</td>
+                            <td data-label="Tipo Material">24</td>
+                            <td data-label="Peso">Engineer</td>
+                            <td data-label="Data">23-07-2002</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </div>
+
+        <script>
+            $('.lista_peso').dropdown()
+        </script>
     </main>
 </body>
