@@ -11,7 +11,7 @@
 }
 
 body {
-    overflow-x: hidden;
+   
     margin: 0;
     padding: 0;
 }
@@ -189,6 +189,18 @@ body {
     font-family: "nunito";
 }
 
+/* lista do input peso, alinha os itens ao centro da div */
+.ui.labeled.input>.label:not(.corner){
+    display: flex;
+    align-items: center;
+}
+
+input:focus{
+    box-shadow:  0 0 0 0;
+    outline: 0;
+
+    scale: 1.02;
+}
 /* Campo onde tem todo os itens do historico rápido na pagina de pesagem */
 .historico_pagina_pesagem {
     margin-top: 30px;
@@ -224,20 +236,24 @@ body {
     background-color: var(--color-secundaria) !important;
     color: white !important;
 
-    font-family: "nunito"
+    font-family: "nunito";
+    font-size: 18px;
 }
 
 /* Itens dentro da tabela */
 .itens_tabela {
-    color: white !important;
-    background-color: #faa53e;
+    color: #072f54f3 !important;
+    background-color: #f2f2f2 !important;
 
-    font-family: "nunito"
+    font-family: "nunito";
+    font-size: 16px;
 }
 
 .itens_tabela_segundo{
-    color: #faa53e !important;
-    background-color: #f2f2f2 !important;
+    font-size: 16px;
+    font-family: "nunito";
+    color: white !important;
+    background-color: #faa53e !important;
 
     font-family: "nunito";
 }
@@ -310,7 +326,7 @@ select {
 }
 
 .fundo_login {
-    height: 500px;
+    height: 450px;
     width: 600px;
 
     border-radius: 15px;
@@ -379,8 +395,7 @@ select {
     justify-content: space-between;
 }
 
-.campo_redefinir_senha>.esqueceu_senha,
-.campo_cadastro>.cadastrar {
+.campo_redefinir_senha>.esqueceu_senha,.cadastrar {
     display: flex;
     justify-content: end;
 }
@@ -515,7 +530,7 @@ select {
     border-radius: 15px !important;
 }
 
-.header_redefinicao {
+.header_redefinicao, .header_cadastro {
     display: flex !important;
     justify-content: center !important;
 
@@ -526,14 +541,14 @@ select {
     border-top-right-radius: 15px !important;
 }
 
-.redefinicao_senha {
+.redefinicao_senha, .cadastro {
     background-color: #072F54 !important;
     color: white !important;
 
     padding-left: 100px !important;
 }
 
-.redefinicao_senha>h5 {
+.redefinicao_senha>h5, .cadastro>h5 {
     font-size: 20px;
 }
 
@@ -601,7 +616,6 @@ select {
     padding: 10px;
     padding-left: 20px;
 }
-
 /* ======================================== */
 /* Responsividade das páginas */
 
@@ -639,6 +653,7 @@ select {
 
     .fundo_login {
         width: 400px;
+        height: 500px;
     }
 
     .local_historico {
