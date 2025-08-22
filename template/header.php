@@ -24,27 +24,12 @@
             <nav class="itens_header">
                 <div></div>
                 <ul class="paginas_header">
-                    <li><a href="./index.html" class="botoes_header">Inicio</a></li>
-                    <li><a href="./pesagem.html" class="botoes_header">Pesagem</a></li>
-                    <li><a href="./historico.html" class="botoes_header">Histórico</a></li>
+                    <li><a href="./index.php" class="botoes_header">Inicio</a></li>
+                    <li><a href="./pesagem.php" class="botoes_header">Pesagem</a></li>
+                    <li><a href="./historico.php" class="botoes_header">Histórico</a></li>
                 </ul>
 
-                <a class="icone_login" href="./login.html"><i class="icone_de_login bi bi-person-circle"></i></a>
+                <a class="icone_login" href="./login.php"><i class="icone_de_login bi bi-person-circle"></i></a>
             </nav>
         </header>
     </div>
-
-    <!-- Página Inicial -->
-    <main class="pagina_inicial" id="pagina_inicial">
-        <div class="container_itens_pag_inicial">
-            <div class="container_imagen">
-            </div>
-            <h1 class="titulo_projeto">RECICLA SENAC</h1>
-            <h3 class="descricao_titulo">Sistema de reciclagem do senac</h3>
-        </div>
-    </main>
-</body>
-
-
-
-</html>

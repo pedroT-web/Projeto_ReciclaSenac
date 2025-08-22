@@ -1,0 +1,106 @@
+<?php
+include './template/header.php';
+
+?>
+<section class="pag_de_login">
+    <div class="row">
+        <div class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12">
+            <h4>Faça login</h4>
+            <h5>Somente os Administradores podem acessar o historico </h5>
+
+            <div class="email">
+                <label class="titulo_login">Email</label><br>
+                <div class="ui input">
+                    <input type="text" placeholder="Digite o Email do Administrador">
+                </div>
+            </div>
+            <div class="senha">
+                <label class="titulo_login">Senha</label><br>
+                <div class="ui input">
+                    <input type="password" placeholder="Digite a senha">
+                </div>
+                <div class="campo_redefinir_senha">
+                    <label class="esqueceu_senha">
+                        Esqueceu a senha? <a href="#" onclick="teste()">Redefinir</a>
+                    </label>
+                    <label class="cadastrar">
+                        Não tem cadastro? <a href="#" onclick="cadastro()">Cadastrar</a>
+                    </label>
+                </div>
+            </div>
+            <div class="espacamento_enviar">
+                <a href="./historico.html" class="botao_login">Entrar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="ui container campo_redefinicao">
+    <div class="ui modal primeiro">
+        <i class="close icon"></i>
+        <div class="header header_redefinicao">
+            <h1>Redefinir Senha</h1>
+        </div>
+        <div class="content redefinicao_senha">
+            <h5>Email</h5>
+            <input type="email" placeholder="Digite o seu Email" class="forms_redefinicao">
+            <h5>Telefone</h5>
+            <input type="Text" placeholder="Digite o número de telefone" class="forms_redefinicao">
+            <h5>Nova Senha</h5>
+            <input type="password" placeholder="8 caracteres ou mais" class="forms_redefinicao">
+            <h5>Confirmar Senha</h5>
+            <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao">
+            <br>
+            <br>
+        </div>
+        <div class="actions botoes_redefinir">
+            <button id="fechar_botao" onclick="atualizarPagina()">Cancelar</button>
+            <button id="salvar_senha" onclick="atualizarPagina2()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+<div class="ui container campo_cadastro">
+    <div class="ui modal segundo ">
+        <i class="close icon"></i>
+        <div class="header header_cadastro">
+            <h1>Cadastrar</h1>
+        </div>
+        <div class="content cadastro">
+            <h5>Email</h5>
+            <input type="email" placeholder="seuEmail@exemplo.com" class="forms_redefinicao">
+            <h5>Telefone</h5>
+            <input type="Text" placeholder="(xx) xxxxx-xxxx" class="forms_redefinicao">
+            <h5>Senha</h5>
+            <input type="password" placeholder="8 caracteres ou mais" class="forms_redefinicao">
+            <h5>Confirmar Senha</h5>
+            <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao">
+            <br>
+            <br>
+        </div>
+        <div class="actions botoes_redefinir">
+            <button id="fechar_botao" onclick="atualizarPagina()">Cancelar</button>
+            <button id="salvar_senha" onclick="atualizarPagina2()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function teste() {
+
+        $('.ui.modal.primeiro').modal('show')
+    }
+
+    function cadastro() {
+
+        $('.ui.modal.segundo').modal('show')
+    }
+</script>
+
+<script src="./js/redefinirsenha.js"></script>
+
+<?php
+
+include    './template/footer.php';
+?>
