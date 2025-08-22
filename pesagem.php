@@ -3,7 +3,7 @@
 include './template/header.php';
 
 
-$dsn = "mysql:dbname=projeto_integrador;host:localhost";
+$dsn = "mysql:dbname=projetoIntegrador;host:localhost";
 $usuario = 'root';
 $senha = '';
 
@@ -47,10 +47,8 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <select class="campos_pag_peso listas" name="tipo_material" id="nome" required="required">
                         <option name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</option>
                         <?php foreach($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <option value=""><?= $linhas_material['nome_meterial']?></option>
+                            <option value=""><?= $linhas_material['material']?></option>
                         <?php } ?>
-                        <option name="lista_material" value="Recíclavel">Recíclavel</option>
-                        <option name="lista_material" value="Não Recíclavel">Não Recíclavel</option>
                     </select><br><br><br>
                 </div>
                 <div class="campo_peso">
@@ -77,7 +75,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
 
             <div class="campo_botao_enviar">
                 <div class="ui button botao_enviar ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
-                    <div type="submit" class="visible content texto_enviar" action="./form-cadastro-peso.php">Enviar</div>
+                    <a class="visible content texto_enviar" href="./cadastrar-diario.php">Enviar</a>
                 </div>
             </div>
         </section>

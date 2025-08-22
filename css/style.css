@@ -316,6 +316,16 @@ select {
 .corpo_tabel_diaria{
     max-height: 400px;
 }
+
+.texto_enviar{
+    color: white;
+}
+.titulo {
+    color: #072F54;
+}
+.texto_enviar:hover{
+    color: white;
+}
 /* ======================================== */
 
 /* Página  de Login */
