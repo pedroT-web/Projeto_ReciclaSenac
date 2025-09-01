@@ -4,10 +4,13 @@ require 'config.php';
 
 $funcionario = $_POST['id_funcionario'];
 $material = $_POST['tipo_material'];
-$peso = $_POST['input_peso'];
-$tipo_peso = intval($_POST['tipo_peso']);
+$peso = intval($_POST['input_peso']);
+$tipo_peso = $_POST['tipo_peso'];
 $data = $_POST['input_data'];
 $kilos_peso = 0;
+
+var_dump($_POST);
+var_dump($peso);
 if (isset($tipo_peso) && !empty($tipo_peso)) {
     if ($tipo_peso == "G") {
         $kilos_peso = $peso / 1000;

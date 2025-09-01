@@ -171,8 +171,14 @@ body {
     gap: 40px;
 }
 
+#input_material{
+    margin-bottom: 40px;
+}
+#tipo_material{
+    margin-top: 15px;
+}
+
 /* Formatação dos input com lista */
-#input_material,
 #id_funcionario,
 #input_data {
     font-family: "nunito";

@@ -7,17 +7,19 @@ $dataDiaria = date('Y-m-d');
 
 echo $dataDiaria . "<br>";
 
-
-$scriptConsultaGeral = "SELECT * FROM cadastro_de_peso WHERE data = :dataAtual";
+// Consulta da tabela de cadastro de peso com uma filtragem diária
+$scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso LEFT JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id LEFT JOIN materiais AS tb_mate ON cad_peso.id = tb_mate.id WHERE data = :data" ;
 $dadosPreparado = $conn->prepare($scriptConsultaGeral);
 $dadosPreparado->execute([
-    ":dataAtual" => $dataDiaria
+    ":data" => $dataDiaria
 ]);
 $resultadoConsultaDiaria = $dadosPreparado->fetchAll();
 
+// Consulta da tabela de funcionarios para gerar a lista do input de funcionario com dados direto do banco 
 $scriptConsulta = "SELECT * FROM tb_funcionarios";
 $resultadoConsulta = $conn->query($scriptConsulta)->fetchAll();
 
+// Consulta da tabela de materiais para gerar a lista do input de material com os dados do banco
 $scriptConsultaMaterial = "SELECT * FROM materiais";
 $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
 
@@ -44,10 +46,9 @@ var_dump($resultadoConsulta);
                 <div class="campo_tipo_material">
                     <label for="nome">Tipo Do Material</label>
                     <br>
-                    <div class="campos_pag_peso listas" id="input_material" required="required">
-                        <!-- <div name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</div> -->
+                    <div class="campos_pag_peso" id="input_material" required="required">
                         <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <input type="radio" name="tipo_material"  value="<?= $linhas_material['nome_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
+                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['nome_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
                         <?php } ?>
                     </div>
                 </div>
@@ -91,13 +92,13 @@ var_dump($resultadoConsulta);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($resultadoConsultaDiaria as $linhas_gerais) { ?>
+                    <?php foreach ($resultadoConsultaDiaria as $cadastro_gerais) { ?>
                         <tr class="itens_tabela">
 
-                            <td scope="row" data-label="Nome do Funcionário"><?= $linhas_gerais['id_funcionarios'] ?></td>
-                            <td data-label="Tipo Material"><?= $linhas_gerais['tipo_do_material'] ?></td>
-                            <td data-label="Peso"><?= $linhas_gerais['peso'] ?></td>
-                            <td data-label="Data"><?= $linhas_gerais['data'] ?></td>
+                            <td scope="row" data-label="Nome do Funcionário"><?= $cadastro_gerais['nome_do_funcionario'] ?></td>
+                            <td data-label="Tipo Material"><?= $cadastro_gerais['nome_material'] ?></td>
+                            <td data-label="Peso"><?= $cadastro_gerais['peso'] ?></td>
+                            <td data-label="Data"><?= $cadastro_gerais['data'] ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
