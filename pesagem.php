@@ -7,8 +7,9 @@ $dataDiaria = date('Y-m-d');
 
 echo $dataDiaria . "<br>";
 
+
 // Consulta da tabela de cadastro de peso com uma filtragem diária
-$scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso LEFT JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id LEFT JOIN materiais AS tb_mate ON cad_peso.id = tb_mate.id WHERE data = :data" ;
+$scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data = :data";
 $dadosPreparado = $conn->prepare($scriptConsultaGeral);
 $dadosPreparado->execute([
     ":data" => $dataDiaria
@@ -48,7 +49,7 @@ var_dump($resultadoConsulta);
                     <br>
                     <div class="campos_pag_peso" id="input_material" required="required">
                         <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['nome_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
+                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['id_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
                         <?php } ?>
                     </div>
                 </div>
@@ -63,7 +64,6 @@ var_dump($resultadoConsulta);
                             <option class="item" value="KG">kg</option>
                             <option class="item" value="G">g</option>
                         </select>
-
                     </div>
                 </div><br><br>
                 <div class="listas">

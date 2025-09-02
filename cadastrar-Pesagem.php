@@ -14,15 +14,17 @@ var_dump($peso);
 if (isset($tipo_peso) && !empty($tipo_peso)) {
     if ($tipo_peso == "G") {
         $kilos_peso = $peso / 1000;
+    }else{
+        $kilos_peso = $peso;
     }
 }
 
-$inserirDados = "INSERT INTO cadastro_de_peso(peso, tipo_do_material, id_funcionarios, data) VALUES (:peso, :tipo_material, :funcionario, :data_cadastro)";
+$inserirDados = "INSERT INTO cadastro_de_peso(peso, id_funcionarios, id_material, data) VALUES (:peso, :funcionario, :id_material ,:data_cadastro)";
 
 $prepararInsert = $conn->prepare($inserirDados)->execute([
     ":peso" => $kilos_peso,
-    ":tipo_material" => $material,
     ":funcionario" => $funcionario,
+    ':id_material' => $material,
     ":data_cadastro" => $data
 ]);
 

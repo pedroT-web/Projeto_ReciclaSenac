@@ -12,9 +12,8 @@ include './template/header.php';
         <div class="local_historico">
             <div class="espacamento_historico">
                 <div class="btn-group botoes_acesso_historico" role="group">
-                    <button type="button" class="btn btn-primary botoes_2">Diário</button>
-                    <button type="button" class="btn btn-primary botoes_2">Mensal</button>
-                    <button type="button" class="btn btn-primary botoes_2">Anual</button>
+                    <label>De:</label><input type="date" class=" input_periodo">
+                    <label>Até:</label><input type="date" class=" input_periodo">
                 </div>
                 <br>
             </div>

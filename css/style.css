@@ -589,13 +589,13 @@ select {
 }
 
 
-.botoes_2 {
+.input_periodo {
     color: white !important;
     background-color: #072f54f3 !important;
     border: none;
 }
 
-.botoes_2:hover {
+.input_periodo:hover {
     color: #072f54f3 !important;
     background-color: white !important;
     border: 2px solid #072f54f3 !important;
