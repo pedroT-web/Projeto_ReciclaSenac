@@ -26,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 130vh;
+    height: 90vh;
 }
 
 .cabecalho_2 {
@@ -171,10 +171,11 @@ body {
     gap: 40px;
 }
 
-#input_material{
+#input_material {
     margin-bottom: 40px;
 }
-#tipo_material{
+
+#tipo_material {
     margin-top: 15px;
 }
 
@@ -198,7 +199,7 @@ body {
     font-family: "nunito";
 }
 
-.container_peso{
+.container_peso {
     display: flex;
     align-items: center;
 }
@@ -346,7 +347,7 @@ select {
     scale: 1.02;
 }
 
-.input_de_peso{
+.input_de_peso {
     border-radius: 0 0 0 0;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -557,7 +558,9 @@ select {
 
 .botoes_acesso_historico {
     height: 40px;
-    width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .botao_relatorio {
@@ -591,17 +594,49 @@ select {
 
 .input_periodo {
     color: white !important;
-    background-color: #072f54f3 !important;
+    background-color: #F7941E !important;
     border: none;
+    border-radius: 10px !important;
+    width: 200px;
+    padding: 10px;
 }
 
 .input_periodo:hover {
-    color: #072f54f3 !important;
+    color: #F7941E !important;
     background-color: white !important;
-    border: 2px solid #072f54f3 !important;
-
-
+    border: 2px solid #F7941E !important;
 }
+
+.label_periodo_fim {
+    /* margin-left: 30px;
+    margin-right: 10px; */
+    color: #072F54;
+}
+
+.label_periodo_inicio {
+    /* margin-right: 10px; */
+    color: #072F54;
+}
+
+.botao_gerar_historico {
+    text-decoration: none;
+    height: 40px;
+
+    background-color: #072F54;
+    color: white;
+
+    border-radius: 7px;
+    padding: 7px;
+    border: none;
+    transition: 0.5s;
+}
+.botao_gerar_historico:hover{
+    background-color: white;
+    border: 2px solid #072F54;
+    color: #072F54;
+    transition: 0.5s;
+}
+
 
 .ui.modal {
     background: rgba(0, 0, 0, 0.0) !important;
@@ -746,6 +781,14 @@ select {
     .local_historico {
         margin-left: 0;
         width: 100%;
+    }
+
+    .input_periodo{
+        width: 150px;
+    }
+
+    .botao_gerar_historico{
+        height: 70px;
     }
 }
 

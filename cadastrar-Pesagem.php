@@ -14,7 +14,7 @@ var_dump($peso);
 if (isset($tipo_peso) && !empty($tipo_peso)) {
     if ($tipo_peso == "G") {
         $kilos_peso = $peso / 1000;
-    }else{
+    }else if($tipo_peso == "KG"){
         $kilos_peso = $peso;
     }
 }
