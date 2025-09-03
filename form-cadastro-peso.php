@@ -1,12 +1,7 @@
 <?php
 
-var_dump($_POST);
 
-$dsn = "mysql:dbname=projeto_integrador;host:localhost";
-$usuario = 'root';
-$senha = '';
-
-$conn = new PDO($dsn, $usuario, $senha);
+require('config.php');
 
 $funcionario = $_POST['lista_funcionario'];
 $material = $_POST['lista_material'];

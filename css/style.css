@@ -227,7 +227,7 @@ input:focus{
 
 /* Tabela da pagina pesagem, o quanto ela usa de espaço */
 .tabela_historico_rapido {
-    height: 80%;
+    max-height: 400px;
 }
 
 /* Itens das tabelas */
@@ -313,6 +313,9 @@ select {
     width: 100% !important;
 }
 
+.corpo_tabel_diaria{
+    max-height: 400px;
+}
 /* ======================================== */
 
 /* Página  de Login */

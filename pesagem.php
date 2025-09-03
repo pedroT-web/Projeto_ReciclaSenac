@@ -109,7 +109,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
     </div>
 
     <script>
-        $('.lista_peso').dropdown()
+        ('.lista_peso').dropdown()
     </script>
 </main>
 
