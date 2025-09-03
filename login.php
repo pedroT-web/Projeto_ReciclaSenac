@@ -22,10 +22,10 @@ include './template/modal-cadastrar.php';
             </div>
             <div class="campo_redefinir_senha">
                 <label class="esqueceu_senha">
-                    Esqueceu a senha? <a href="" data-bs-toggle="modal" data-bs-target="#modalRedefinirSenha">Redefinir</a>
+                    Esqueceu a senha? <a data-bs-toggle="modal" data-bs-target="#modalRedefinirSenha">Redefinir</a>
                 </label>
                 <label class="cadastrar">
-                    Não tem cadastro? <a href="" data-bs-toggle="modal" data-bs-target="#modalCadastrar">Cadastrar</a>
+                    Não tem cadastro? <a data-bs-toggle="modal" data-bs-target="#modalCadastrar">Cadastrar</a>
                 </label>
             </div>
             <div class="espacamento_enviar">

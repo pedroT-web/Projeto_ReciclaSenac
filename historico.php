@@ -1,5 +1,6 @@
 <?php
 include './template/header.php';
+include './template/modal-cadastrarFuncionario.php';
 
 // if(isset($_SESSION) || empty($_SESSION['id_logado'])){
 //     header('location:./login.php');
@@ -8,6 +9,15 @@ include './template/header.php';
 ?>
 
 <section class="pag_historico">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Cadastros
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastrarFuncionario" >Cadastrar Funcionário</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastrarMaterial" href="#">Cadastrar Material</a></li>
+        </ul>
+    </div>
     <div class="agrupamento_historico">
         <div class="local_historico">
             <div class="espacamento_historico">
@@ -94,6 +104,7 @@ include './template/header.php';
                 </tbody>
             </table>
         </div>
+
         <div class="campo_botao_enviar">
             <div class="ui button botao_relatorio ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
                 <a type="button" href="gerar-excel.php" class="btn btn-primary visible content botao_enviar_relatorio">Gerar Relatório</a>
