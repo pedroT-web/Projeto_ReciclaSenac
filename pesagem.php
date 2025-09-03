@@ -46,7 +46,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <br>
                     <select class="campos_pag_peso listas" name="tipo_material" id="nome" required="required">
                         <option name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</option>
-                        <?php foreach($resultadoMaterial as $linhas_material) { ?>
+                        <?php foreach($resultadoConsultaMaterial as $linhas_material) { ?>
                             <option value=""><?= $linhas_material['nome_meterial']?></option>
                         <?php } ?>
                         <option name="lista_material" value="Recíclavel">Recíclavel</option>
