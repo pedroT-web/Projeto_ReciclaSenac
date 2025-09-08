@@ -29,24 +29,13 @@ body {
     height: 90vh;
 }
 
-.cabecalho_2 {
-    height: 50px;
-    width: 100%;
-    background-color: #082036;
-
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-}
-
 .btn-close {
     color: white !important;
 }
 
 .cabecalho {
     height: 50px;
-    width: 150vw;
+    width: 100%;
     background-color: #082036;
 
     display: flex;
@@ -474,10 +463,10 @@ select {
     gap: 5px;
 }
 
-.esqueceu_senha>a,
-.cadastrar>a {
+.link_cadastro, .link_redefinicao {
     text-decoration: none;
     color: var(--color-secundaria);
+    cursor: pointer;
 }
 
 .esqueceu_senha>a:hover,
@@ -630,7 +619,8 @@ select {
     border: none;
     transition: 0.5s;
 }
-.botao_gerar_historico:hover{
+
+.botao_gerar_historico:hover {
     background-color: white;
     border: 2px solid #072F54;
     color: #072F54;
@@ -722,7 +712,8 @@ select {
     transition: 0.2s;
 }
 
-.forms_redefinicao, .forms_cadastro_funcionario {
+.forms_redefinicao,
+.forms_cadastro_funcionario {
     width: 80%;
     height: 40px;
     border-radius: 7px;
@@ -783,11 +774,11 @@ select {
         width: 100%;
     }
 
-    .input_periodo{
+    .input_periodo {
         width: 150px;
     }
 
-    .botao_gerar_historico{
+    .botao_gerar_historico {
         height: 70px;
     }
 }

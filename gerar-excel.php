@@ -1,6 +1,10 @@
 <?php
 require 'config.php';
 
+$selectGerado = $_POST['consultaPeriodo'];
+
+var_dump($selectGerado);
+
 //  Tabela html com o formato da planilha do excel
 // Titulo da tabela
 $html = '';
