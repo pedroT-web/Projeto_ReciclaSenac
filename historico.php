@@ -8,13 +8,13 @@ include './template/header.php';
     <div class="agrupamento_historico">
         <div class="local_historico">
             <div class="espacamento_historico">
-                <div class="botoes_acesso_historico ui buttons">
-                    <button class="botoes_2 ui button">Diário</button>
-                    <button class="botoes_2 ui button">Semanal</button>
-                    <button class="botoes_2 ui button">Mensal</button>
+                <div class="btn-group botoes_acesso_historico" role="group">
+                    <button type="button" class="btn btn-primary botoes_2">Diário</button>
+                    <button type="button" class="btn btn-primary botoes_2">Mensal</button>
+                    <button type="button" class="btn btn-primary botoes_2">Anual</button>
                 </div>
             </div>
-            <table class="ui celled table">
+            <table class="ui celled ui celled table-striped table tabela_historicos">
                 <thead>
                     <tr>
                         <th>Nome do Funcionário</th>
@@ -83,7 +83,7 @@ include './template/header.php';
         </div>
         <div class="campo_botao_enviar">
             <div class="ui button botao_relatorio ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
-                <div class="visible content texto_enviar">Gerar Relatório</div>
+                <button type="button" class="btn btn-primary visible content botao_enviar_relatorio">Gerar Relatório</button>
             </div>
         </div>
     </div>

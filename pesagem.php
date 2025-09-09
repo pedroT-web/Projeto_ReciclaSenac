@@ -3,7 +3,7 @@
 include './template/header.php';
 
 
-$dsn = "mysql:dbname=projetoIntegrador;host:localhost";
+$dsn = "mysql:dbname=projeto_integrador;host:localhost";
 $usuario = 'root';
 $senha = '';
 
@@ -27,18 +27,18 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
 <main class="pagina_de_pesagem" id="pagina_de_pesagem">
     <div class="row">
         <section class="espacamento_input col-sm-10 col-md-6 col-lg-6 col-10">
-            <div class="ms-4">
+            <form method="POST" action="processaPesagem.php" class="ms-4">
                 <div class="campo_funcionario">
-                    <label for="nome">Nome Do Funcionário</label>
+                    <label for="nome_funcionario">Nome Do Funcionário</label>
                     <br>
-                    <select class="campos_pag_peso ui search dropdow listas" id="nome">
-                        <option value="">Selecione o Funcionário</option>
-                        <?php foreach($resultadoConsulta as $linhas) { ?>
+                    <select class="campos_pag_peso ui search dropdow listas" id="nome_funcionario" name="nome_funcionario">
+                        <option>Selecione o Funcionário</option>
+                        <?php foreach ($resultadoConsulta as $linhas) { ?>
 
-                            <option name="lista_funcionario" value="<?php $id_Funcionario ?>"><?= $linhas['nome_do_funcionario'] ?></option>
+                            <option name="lista_funcionario" value="<?php $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
 
                         <?php } ?>
-                        
+
                     </select><br><br><br>
                 </div>
                 <div class="campo_tipo_material">
@@ -46,24 +46,24 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <br>
                     <select class="campos_pag_peso listas" name="tipo_material" id="nome" required="required">
                         <option name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</option>
-                        <?php foreach($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <option value=""><?= $linhas_material['material']?></option>
+                        <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
+                            <option value="<?= $linhas_material['id'] ?>"><?= $linhas_material['nome_material'] ?></option>
                         <?php } ?>
                     </select><br><br><br>
                 </div>
                 <div class="campo_peso">
                     <label for="nome">Peso</label>
                     <br>
-                    <div class="ui right labeled input listas" id="nome">
-                        <input name="input_peso" type="number" placeholder="Digite o peso">
-                        <div class="ui dropdown label lista_peso">
-                            <div class="text">Escolha o tipo de peso</div>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div name="lista_peso" class="item">kg</div>
-                                <div name="lista_peso" class="item">g</div>
-                            </div>
-                        </div>
+                    <div class="form-floating listas" id="nome">
+                        <input class="form-control" name="input_peso" id="input_peso" type="number" placeholder="Digite o peso">
+                         <label for="input_peso">Digite o Peso</label>
+
+                        <select class="menu " name="tipo_peso">
+                            <option name="lista_peso" value="">Tipo</option>
+                            <option name="lista_peso" class="item" value="kg">kg</option>
+                            <option name="lista_peso" class="item" value="g">g</option>
+                        </select>
+
                     </div>
                 </div><br><br>
                 <div class="listas">
@@ -71,44 +71,40 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <br>
                     <input class="campo_data" type="date" id="nome" name="input_data" placeholder="" required><br><br><br>
                 </div><br><br>
-            </div>
+            </form>
 
             <div class="campo_botao_enviar">
                 <div class="ui button botao_enviar ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
-                    <a class="visible content texto_enviar" href="./cadastrar-diario.php">Enviar</a>
+                    <a class="texto_enviar" href="./cadastrar-diario.php">Enviar</a>
                 </div>
             </div>
         </section>
         <section class="historico_pagina_pesagem col-sm-8 col-md-5 col-lg-5 col-6">
             <h3 class="mt-2 titulo">Históricos Diários</h3>
-            <table class="ui celled striped table tabela_historico_rapido">
+            <table class="ui celled table-striped table tabela_historico_rapido">
                 <thead>
                     <tr class="titulos_tabela">
-                        <th>Nome do Funcionário</th>
-                        <th>Tipo Material</th>
-                        <th>Peso</th>
-                        <th>Data</th>
+                        <th scope="col">Nome do Funcionário</th>
+                        <th scope="col">Tipo Material</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Data</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($resultadoConsultaGeral as $linhas_gerais) { ?>
+                    <?php foreach ($resultadoConsultaGeral as $linhas_gerais) { ?>
                         <tr class="itens_tabela">
-                        
-                        <td data-label="Nome do Funcionário"><?= $linhas_gerais['id_funcionarios'] ?></td>
-                        <td data-label="Tipo Material"><?= $linhas_gerais['tipo_do_material']?></td>
-                        <td data-label="Peso"><?= $linhas_gerais['peso']?></td>
-                        <td data-label="Data"><?= $linhas_gerais['data']?></td>
-                    </tr>
-                    <?php }?>
-                    
+
+                            <td  scope="row" data-label="Nome do Funcionário"><?= $linhas_gerais['id_funcionarios'] ?></td>
+                            <td data-label="Tipo Material"><?= $linhas_gerais['tipo_do_material'] ?></td>
+                            <td data-label="Peso"><?= $linhas_gerais['peso'] ?></td>
+                            <td data-label="Data"><?= $linhas_gerais['data'] ?></td>
+                        </tr>
+                    <?php } ?>
+
                 </tbody>
             </table>
         </section>
     </div>
-
-    <script>
-        ('.lista_peso').dropdown()
-    </script>
 </main>
 
 <?php
