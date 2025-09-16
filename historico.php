@@ -1,6 +1,9 @@
 <?php
-
 include './template/header.php';
+
+// if(isset($_SESSION) || empty($_SESSION['id_logado'])){
+//     header('location:./login.php');
+// }
 
 ?>
 
@@ -13,6 +16,7 @@ include './template/header.php';
                     <button type="button" class="btn btn-primary botoes_2">Mensal</button>
                     <button type="button" class="btn btn-primary botoes_2">Anual</button>
                 </div>
+                <br>
             </div>
             <table class="ui celled ui celled table-striped table tabela_historicos">
                 <thead>

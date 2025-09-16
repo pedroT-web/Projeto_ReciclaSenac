@@ -172,8 +172,9 @@ body {
 }
 
 /* Formatação dos input com lista */
-#nome,
-#nome_funcionario {
+#input_material,
+#id_funcionario,
+#input_data {
     font-family: "nunito";
     border: 1px solid rgba(34, 36, 38, .15);
 
@@ -189,6 +190,11 @@ body {
 #nome::placeholder {
     color: black;
     font-family: "nunito";
+}
+
+.container_peso{
+    display: flex;
+    align-items: center;
 }
 
 /* lista do input peso, alinha os itens ao centro da div */
@@ -311,10 +317,6 @@ select {
     max-height: 400px;
 }
 
-.texto_enviar {
-    color: white;
-}
-
 .titulo {
     color: #072F54;
 }
@@ -326,35 +328,42 @@ select {
     color: #f2f2f2 !important;
     transition: 0.3s !important;
     border-radius: 10px;
+    color: white;
+    border: 1px solid var(--color-secundaria);
 }
 
 .texto_enviar:hover {
     color: white;
     transition: 0.3s;
     background-color: #072F54 !important;
+    border: 1px solid #072F54;
     scale: 1.02;
 }
 
+.input_de_peso{
+    border-radius: 0 0 0 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 60px;
+}
 
 .menu {
     background-color: #F7941E;
     border: none;
+    border-radius: 0 0 0 0 !important;
     color: white;
     appearance: none;
     padding: 8px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
     width: 70px;
+    height: 58px;
     font-size: 16px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.menu:focus-visible {
-    outline-color: linear-gradient(90deg, rgba(0, 34, 36, 1) 0%, rgba(9, 69, 121, 1) 14%, rgba(0, 162, 255, 1) 69%);
 }
 
 /* ======================================== */
