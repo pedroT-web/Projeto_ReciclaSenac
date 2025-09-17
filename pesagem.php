@@ -44,12 +44,12 @@ var_dump($resultadoConsulta);
                 <div class="campo_tipo_material">
                     <label for="nome">Tipo Do Material</label>
                     <br>
-                    <select class="campos_pag_peso listas" name="tipo_material" id="input_material" required="required">
-                        <option name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</option>
+                    <div class="campos_pag_peso listas" id="input_material" required="required">
+                        <!-- <div name="lista_material" value="">Escolha o Tipo Do Material Que foi pesado</div> -->
                         <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <option value="<?= $linhas_material['nome_material'] ?>"><?= $linhas_material['nome_material'] ?></option>
+                            <input type="radio" name="tipo_material"  value="<?= $linhas_material['nome_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
                         <?php } ?>
-                    </select><br><br><br>
+                    </div>
                 </div>
                 <div class="campo_peso">
                     <label for="nome">Peso</label>
