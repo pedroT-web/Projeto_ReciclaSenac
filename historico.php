@@ -33,10 +33,10 @@ if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
 <section class="pag_historico">
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Cadastros
+            Cadastros
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastrarFuncionario" >Cadastrar Funcionário</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastrarFuncionario">Cadastrar Funcionário</a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastrarMaterial" href="#">Cadastrar Material</a></li>
         </ul>
     </div>
@@ -56,7 +56,9 @@ if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
                 </form>
                 <br>
             </div class="btn-group botoes_acesso_historico" role="group">
-            <div>
+            
+            <div class="alert alert-warning w-100 text-center" role="alert">
+                A simple warning alert—check it out!
             </div>
 
             <table class="ui celled ui celled table-striped table tabela_historicos">
@@ -69,13 +71,13 @@ if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($resultadoConsulta as $cadastro) { ?>
-                    <tr class="itens_tabela">
-                        <td><?= $cadastro['nome_funcionario'] ?></td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
-                    </tr>
+                    <?php foreach ($resultadoConsulta as $cadastro) { ?>
+                        <tr class="itens_tabela">
+                            <td><?= $cadastro['nome_funcionario'] ?></td>
+                            <td>September 14, 2013</td>
+                            <td>jhlilk22@yahoo.com</td>
+                            <td>No</td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>

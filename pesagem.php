@@ -38,7 +38,7 @@ var_dump($resultadoConsulta);
                     <label for="nome_funcionario">Nome Do Funcionário</label>
                     <br>
                     <select class="campos_pag_peso ui search dropdow listas" id="id_funcionario" name="id_funcionario">
-                        <option >Selecione o Funcionário</option>
+                        <option>Selecione o Funcionário</option>
                         <?php foreach ($resultadoConsulta as $linhas) { ?>
                             <option  value="<?= $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
                         <?php } ?>

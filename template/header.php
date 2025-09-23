@@ -20,7 +20,7 @@
                 <div></div>
                 <ul class="paginas_header">
                     <li><a href="./index.php" class="botoes_header">Inicio</a></li>
-                    <li><a href="./pesagem.php" class="botoes_header">Pesagem</a></li>
+                    <li><a href="./pesagem.php" class="botoes_header">Pesagem</a></li>  
                     <li><a href="./historico.php" class="botoes_header">Histórico</a></li>
                 </ul>
 
