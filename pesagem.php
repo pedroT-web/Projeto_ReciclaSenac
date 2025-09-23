@@ -1,6 +1,8 @@
+
 <?php
 
 include './template/header.php';
+
 require 'config.php';
 
 $dataDiaria = date('Y-m-d');

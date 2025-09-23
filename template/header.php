@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start() ?>
+<?php /*session_start() */?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,4 +27,4 @@
                 <a class="icone_login" href="./login.php"><i class="icone_de_login bi bi-person-circle"></i></a>
             </nav>
         </header>
-    </div>
+    </div>  

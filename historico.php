@@ -1,10 +1,32 @@
 <?php
 include './template/header.php';
 include './template/modal-cadastrarFuncionario.php';
+require './config.php';
 
 // if(isset($_SESSION) || empty($_SESSION['id_logado'])){
 //     header('location:./login.php');
 // }
+
+$dataAtual = date('Y-m-d');
+
+var_dump($_POST);
+
+if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
+    $dataInicio = $_POST['inicio_periodo'];
+    $dataFim = $_POST['fim_periodo'];
+    var_dump($dataInicio);
+
+    $select = "SELECT * FROM cadastro_de_peso WHERE data BETWEEN :data_inicio AND :data_fim";
+
+    $preparaSelect = $conn->prepare($select);
+    $preparaSelect->execute([
+        ":data_inicio" => $dataInicio,
+        "data_fim" => $dataFim
+    ]);
+    $resultadoConsulta = $preparaSelect->fetchAll();
+
+    var_dump($resultadoConsulta);
+}
 
 ?>
 
@@ -21,12 +43,12 @@ include './template/modal-cadastrarFuncionario.php';
     <div class="agrupamento_historico">
         <div class="local_historico">
             <div class="espacamento_historico">
-                <form method="POST" action="select_historico.php" class="btn-group botoes_acesso_historico" role="group">
+                <form method="POST" action="#" class="btn-group botoes_acesso_historico" role="group">
                     <div>
-                        <label class="label_periodo_inicio">De:</label><input type="date" id="inicio_periodo" name="inicio_periodo" class=" input_periodo">
+                        <label class="label_periodo_inicio">De:</label><input type="date" id="inicio_periodo" name="inicio_periodo" class=" input_periodo" value="<?= $dataAtual ?>">
                     </div>
                     <div>
-                        <label class="label_periodo_fim">Até:</label><input type="date" id="fim_periodo" name="fim_periodo" class=" input_periodo periodo_fim">
+                        <label class="label_periodo_fim">Até:</label><input type="date" id="fim_periodo" name="fim_periodo" class=" input_periodo periodo_fim" value="<?= $dataAtual ?>">
                     </div>
                     <div>
                         <button type="submit" class="botao_gerar_historico">Gerar Historico</button>
@@ -47,60 +69,14 @@ include './template/modal-cadastrarFuncionario.php';
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($resultadoConsulta as $cadastro) { ?>
                     <tr class="itens_tabela">
-                        <td>John Lilki</td>
+                        <td><?= $cadastro['nome_funcionario'] ?></td>
                         <td>September 14, 2013</td>
                         <td>jhlilk22@yahoo.com</td>
                         <td>No</td>
                     </tr>
-                    <tr class="itens_tabela_segundo">
-                        <td>Jamie Harington</td>
-                        <td>January 11, 2014</td>
-                        <td>jamieharingonton@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela_segundo">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela_segundo">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela_segundo">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr class="itens_tabela">
-                        <td>Jill Lewis</td>
-                        <td>May 11, 2014</td>
-                        <td>jilsewris22@yahoo.com</td>
-                        <td>Yes</td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
