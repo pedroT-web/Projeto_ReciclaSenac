@@ -1,4 +1,10 @@
 <?php
-include './template/modal-cadastrarFuncionario.php';
+require 'config.php';
+require './class/Funcionario.php';
 
-var_dump($_POST);
+$funcionario = new Funcionario();
+$nomeFunc = $_POST['input_nome_func'];
+
+$funcionario->fnCadastrarFuncionario($nomeFunc);
+
+header("location: ./historico.php");

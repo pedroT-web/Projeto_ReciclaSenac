@@ -9,5 +9,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST['input_email'];
     $senha = $_POST['input_senha'];
 
-    $autorizado = $usuario->fnValidarAdmin($email, $senha);
+    $autorizado = $admin->fnValidarAdmin($email, $senha);
 }
