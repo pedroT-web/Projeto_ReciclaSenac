@@ -5,7 +5,7 @@ O Projeto ReciclaSenac tem como objetivo facilitar e otimizar a documentação d
 
 A iniciativa busca não apenas agilizar o processo de registro, mas também contribuir para a organização e eficiência das rotinas internas, oferecendo uma ferramenta de apoio prática e funcional.
 
-Este projeto foi desenvolvido como parte de um Projeto Integrador, com foco tanto no aprendizado acadêmico quanto na aplicação prática para atender às necessidades reais do Instituto.
+Este projeto foi desenvolvido como parte de um Projeto Integrador, com foco tanto no aprendizado quanto na aplicação prática para atender às necessidades reais do Instituto.
 
 
 ## Propósito
@@ -68,6 +68,8 @@ A proposta do Projeto Recicla Senac é auxiliar o controle de registro de pesage
 
 <hr>
 
+## 📁 Estrutura do Projeto
+
 ```
 Projeto_ReciclaSenac/
 ├── 🔧 .env                        # Variáveis de ambiente Para a integração do banco de dados (configuração local)
@@ -110,3 +112,28 @@ Projeto_ReciclaSenac/
     └──  modal-*.php               # Modais de cadastro (Funcionário, Material, redefinição de senha, novo Usuário.).
     
 ```
+<br>
+<hr>
+
+
+## 📊 Estrutura do Bando de Dados
+- tb_funcionarios: Tabela que contém os funcionários interno da sustentabilidade.
+- tb_materiais: Tabela que contém os materiais que o senac aceita para executar a pesagem.
+- cadastro_de_peso: Tabela que contém os cadastros de pesos.
+- tb_administrador: Tabela que contém os dados de login do administrador.
+  
+<br>
+<hr>
+
+## Linguagens e Frameworks Utilizadas
+- Backend:
+   - PHP.
+- Banco de Dados:
+   - MySql(MariaDB).
+- FrontEnd:
+   - HTML.
+   - CSS.
+   - Bootstrap.
+   - Bootstrap ICONS. 
+- Servidor do Banco (Local):
+   - XAMPP 
