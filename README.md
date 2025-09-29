@@ -129,7 +129,7 @@ Projeto_ReciclaSenac/
 - Backend:
    - PHP.
 - Banco de Dados:
-   - MySql(MariaDB).
+   - MariaDB.
 - FrontEnd:
    - HTML.
    - CSS.
