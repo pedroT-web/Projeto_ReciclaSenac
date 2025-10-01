@@ -1,6 +1,7 @@
 <?php
 include './template/header-historico.php';
 include './template/modal-cadastrarFuncionario.php';
+include './template/modal-editarRegistro.php';
 require './config.php';
 
 // if(isset($_SESSION) || empty($_SESSION['id_logado'])){
@@ -9,8 +10,7 @@ require './config.php';
 
 $dataAtual = date('Y-m-d');
 
-
-if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
+if (isset($_POST['inicio_periodo']) && empty($_POST['inicio_periodo'])) {
     $dataInicio = $_POST['inicio_periodo'];
     $dataFim = $_POST['fim_periodo'];
 
@@ -60,31 +60,35 @@ if (isset($_POST['inicio_periodo']) && !empty($_POST['inicio_periodo'])) {
                 <br>
             </div class="btn-group botoes_acesso_historico" role="group">
 
-            <div class="alert alert-warning w-100 text-center" role="alert">
-                Selecione Um Período para ser exibido
-            </div>
-
             <table class="ui celled ui celled table-striped table tabela_historicos">
                 <thead class="tabela_historicos">
-                    <tr>
+                    <tr class="text-center">
                         <th>Nome do Funcionário</th>
                         <th>Tipo Material</th>
                         <th>Peso</th>
                         <th>Data</th>
-                        <th>Ações</th>
+                        <th>Deletar</th>
                     </tr>
                 </thead>
                 <tbody class="conteudo_historicos">
-                    <?php foreach ($resultadoConsulta as $cadastro) { ?>
-                        <input type="hidden" value="<?= $cadastro['id'] ?>">
-                        <tr class="itens_tabela">
-                            <td><?= $cadastro['nome_do_funcionario'] ?></td>
-                            <td><?= $cadastro['nome_material'] ?></td>
-                            <td><?= $cadastro['peso'] ?></td>
-                            <td><?= $cadastro['data'] ?></td>
-                            <td class="acoes"><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?=$cadastro['id']?>"><i class="icone_lixeira bi bi-trash3-fill"></i></a><a class="botao_edicao" href="editarRegistro.php"><i class="icone_edicao bi bi-pencil-square"></i></a></td>
-                        </tr>
-                    <?php } ?>
+                    <?php
+                    if (empty($resultadoConsulta)) {
+                        echo '<div class="alert alert-warning w-100 text-center" role="alert">
+                              Selecione Um Período para ser exibido
+                            </div>';
+                    } else { ?>
+                        <?php foreach ($resultadoConsulta as $cadastro) { ?>
+                            <input type="hidden" value="<?= $cadastro['id'] ?>">
+                            <tr class="itens_tabela">
+                                <td class="text-center"><?= $cadastro['nome_do_funcionario'] ?></td>
+                                <td class="text-center"><?= $cadastro['nome_material'] ?></td>
+                                <td class="text-center"><?= $cadastro['peso'] ?></td>
+                                <td class="text-center"><?= $cadastro['data'] ?></td>
+                                <td class="acoes text-center"><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?= $cadastro['id'] ?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>&&deletar="><i class="icone_lixeira bi bi-trash3-fill"></i></a></td>
+                            </tr>
+                    <?php }
+                    } ?>
+
                 </tbody>
             </table>
         </div>

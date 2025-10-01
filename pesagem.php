@@ -34,31 +34,31 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                 <div class="campo_funcionario">
                     <label for="nome_funcionario">Nome Do Funcionário</label>
                     <br>
-                    <select class="campos_pag_peso ui search dropdow listas" id="id_funcionario" name="id_funcionario">
-                        <option>Selecione o Funcionário</option>
+                    <select class="campos_pag_peso ui search dropdow listas" id="id_funcionario" name="id_funcionario" required>
+                        <option value="" disabled selected required>Selecione o Funcionário</option>
                         <?php foreach ($resultadoConsulta as $linhas) { ?>
                             <option  value="<?= $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
                         <?php } ?>
-
                     </select>
                     <br><br><br>
                 </div>
                 <div class="campo_tipo_material">
                     <label for="nome">Tipo Do Material</label>
                     <br>
-                    <div class="campos_pag_peso" id="input_material" required="required">
+                    <div class="campos_pag_peso" id="input_material" required>
                         <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['id_material'] ?>"><label><?= $linhas_material['nome_material'] ?></label>
+                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['id_material'] ?>" required><label><?= $linhas_material['nome_material'] ?></label>
                         <?php } ?>
+                        <label id="erro_peso"></label>
                     </div>
                 </div>
                 <div class="campo_peso">
                     <label for="nome">Peso</label>
                     <br>
                     <div class="form-floating container_peso">
-                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" placeholder="Digite o peso">
+                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" placeholder="Digite o peso" required>
                         <label for="input_peso">Digite o Peso</label>
-                        <select class="menu " name="tipo_peso">
+                        <select class="menu " name="tipo_peso" required>
                             <option value="">Tipo</option>
                             <option class="item" value="KG">kg</option>
                             <option class="item" value="G">g</option>

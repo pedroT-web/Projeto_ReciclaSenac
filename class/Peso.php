@@ -41,7 +41,24 @@ class Peso
         return $prepararScript->fetchAll();
     }
 
-    public function fnDeletarRegistro($deletado){
-        
+    public function fnDeletarRegistro($id_deletar)
+    {
+        $scriptDelete = "DELETE FROM cadastro_de_peso WHERE id = :id";
+        $prepararDelete = $this->conn->prepare($scriptDelete);
+        $prepararDelete->execute([
+            ":id" => $id_deletar
+        ]);
+        return $prepararDelete;
+    }
+
+    public function fnConsultarRegistro($id_registro)
+    {
+        $scriptSelect = "SELECT FROM cadastro_de_peso WHERE id = :id";
+        $prepararSelect = $this->conn->prepare($scriptSelect);
+        $prepararSelect->execute([
+            ":id" => $id_registro
+        ]);
+
+        return $prepararSelect->fetch();
     }
 }
