@@ -24,9 +24,9 @@ include './template/modal-cadastrar.php';
                 <label class="esqueceu_senha">
                     Esqueceu a senha? <a class="link_redefinicao" data-bs-toggle="modal" data-bs-target="#modalRedefinirSenha">Redefinir</a>
                 </label>
-                <label class="cadastrar">
+                <!-- <label class="cadastrar">
                     Não tem cadastro? <a class="link_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrar">Cadastrar</a>
-                </label>
+                </label> -->
             </div>
             <div class="espacamento_enviar">
                 <button type="submit" class="botao_login">Entrar</a>

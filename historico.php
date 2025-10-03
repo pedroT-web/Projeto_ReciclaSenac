@@ -10,29 +10,16 @@ require './config.php';
 
 $dataAtual = date('Y-m-d');
 
-if (isset($_POST['inicio_periodo']) && empty($_POST['inicio_periodo'])) {
-    $dataInicio = $_POST['inicio_periodo'];
-    $dataFim = $_POST['fim_periodo'];
+$dataInicio = $_POST['inicio_periodo'] ?? 0;
+$dataFim = $_POST['fim_periodo'] ?? 0;
 
-    $select = "SELECT cad_peso.id, cad_peso.peso, cad_peso.data, tb_func.id_funcionario, tb_func.nome_do_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data BETWEEN :data_inicio AND :data_fim";
-    $preparaSelect = $conn->prepare($select);
-    $preparaSelect->execute([
-        ":data_inicio" => $dataInicio,
-        ":data_fim" => $dataFim
-    ]);
-    $resultadoConsulta = $preparaSelect->fetchAll();
-} else {
-    $dataInicio = $dataAtual;
-    $dataFim = $dataAtual;
-    $select = "SELECT * FROM cadastro_de_peso WHERE data BETWEEN :data_inicio AND :data_fim";
-
-    $preparaSelect = $conn->prepare($select);
-    $preparaSelect->execute([
-        ":data_inicio" => $dataInicio,
-        ":data_fim" => $dataFim
-    ]);
-    $resultadoConsulta = $preparaSelect->fetchAll();
-}
+$select = "SELECT cad_peso.id, cad_peso.peso, cad_peso.data, tb_func.id_funcionario, tb_func.nome_do_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data BETWEEN :data_inicio AND :data_fim";
+$preparaSelect = $conn->prepare($select);
+$preparaSelect->execute([
+    ":data_inicio" => $dataInicio,
+    ":data_fim" => $dataFim
+]);
+$resultadoConsulta = $preparaSelect->fetchAll();
 
 ?>
 
