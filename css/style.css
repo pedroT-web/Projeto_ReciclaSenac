@@ -625,15 +625,14 @@ select {
     border: 2px solid #F7941E !important;
 }
 
-.label_periodo_fim {
-    /* margin-left: 30px;
-    margin-right: 10px; */
-    color: #072F54;
+.container_label_inicio, .container_label_fim{
+    display: flex;
+    align-items: center;
 }
 
-.label_periodo_inicio {
-    /* margin-right: 10px; */
+.label_periodo_inicio, .label_periodo_fim {
     color: #072F54;
+    font-size: 26px;
 }
 
 .botao_gerar_historico {

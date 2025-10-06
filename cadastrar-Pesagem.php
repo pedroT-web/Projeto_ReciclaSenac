@@ -4,17 +4,18 @@ require 'config.php';
 
 $funcionario = $_POST['id_funcionario'];
 $material = $_POST['tipo_material'];
-$peso = intval($_POST['input_peso']);
+// str_replace($procura, $subistitui, nisso)
+$peso = str_replace(',', '.', $_POST['input_peso']); // ele vai subistituir o valor desejado, pelo valor informado
 $tipo_peso = $_POST['tipo_peso'];
 $data = $_POST['input_data'];
 $kilos_peso = 0;
 
-var_dump($_POST);
-var_dump($peso);
+
 if (isset($tipo_peso) && !empty($tipo_peso)) {
     if ($tipo_peso == "G") {
-        $kilos_peso = $peso / 1000;
+        $kilos_peso = $peso;
     }else if($tipo_peso == "KG"){
+        $peso = floatval($peso); // Transforma em double
         $kilos_peso = $peso;
     }
 }

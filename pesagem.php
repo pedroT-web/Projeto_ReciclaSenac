@@ -5,8 +5,8 @@ include './template/header.php';
 
 require 'config.php';
 
-$dataDiaria = date('Y-m-d');
-
+date_default_timezone_set('America/Sao_Paulo'); // Define p fuso-horário
+$dataDiaria = date('Y-m-d'); // Coleta a data atual
 
 // Consulta da tabela de cadastro de peso com uma filtragem diária
 $scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data = :data";
@@ -56,7 +56,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <label for="nome">Peso</label>
                     <br>
                     <div class="form-floating container_peso">
-                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" placeholder="Digite o peso" required>
+                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" step="0.01" placeholder="Digite o peso" required>
                         <label for="input_peso">Digite o Peso</label>
                         <select class="menu " name="tipo_peso" required>
                             <option value="">Tipo</option>
@@ -92,12 +92,15 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                 </thead>
                 <tbody>
                     <?php foreach ($resultadoConsultaDiaria as $cadastro_gerais) { ?>
+                        <!-- transforma a data do banco em formato da nossa data, a cada item percorrido no foreach -->
+                         <!-- DateTime::CreateFromFormat / Cria um objeto de data no formato especifico que for informado, recebe em um formato e transforma em outro -->
+                        <?php $data_formatada = DateTime::CreateFromFormat('Y-m-d', $cadastro_gerais['data'])->format('d/m/Y') ?>
                         <tr class="itens_tabela">
 
                             <td scope="row" data-label="Nome do Funcionário"><?= $cadastro_gerais['nome_do_funcionario'] ?></td>
                             <td data-label="Tipo Material"><?= $cadastro_gerais['nome_material'] ?></td>
                             <td data-label="Peso"><?= $cadastro_gerais['peso'] ?></td>
-                            <td data-label="Data"><?= $cadastro_gerais['data'] ?></td>
+                            <td data-label="Data"><?= $data_formatada ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -105,6 +108,8 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
         </section>
     </div>
 </main>
+
+<script src="validacao.js"></script>
 
 <?php
 

@@ -37,7 +37,7 @@ include './template/modal-cadastrarMaterial.php';
                     <li><a href="./historico.php" class="botoes_header">Histórico</a></li>
                 </ul>
                 <div class="col-4 d-flex justify-content-end">
-                    <a class="icone_login" href="./login.php"><i class="icone_de_login bi bi-person-circle"></i></a>
+                    <a class="icone_login" href="./sair.php"><i class="icone_de_login bi bi-box-arrow-left"></i></a>
                 </div>
             </nav>
         </header>

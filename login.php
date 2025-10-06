@@ -6,6 +6,14 @@ include './template/modal-cadastrar.php';
 ?>
 <section class="pag_de_login">
     <div class="row container_login">
+        <?php
+        // Verificando a requisição GET enviada pelo arquivo verificarAdmin para exibir a mensagem de erro ao usuário
+        if (isset($_GET['usuariologado']) && $_GET["usuariologado"] == 1) { // Mensagem para mostrar que o usuário está incorreto
+            echo '<div class="alert alert-danger w-100 text-center" role="alert">
+                    Administrador Não Encontrado
+            </div>';
+        }
+        ?>
         <form class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12" method="POST" action="verificarAdmin.php">
             <h4>Faça login</h4>
             <h5>Somente os Administradores podem acessar o historico </h5>
@@ -13,12 +21,12 @@ include './template/modal-cadastrar.php';
             <div class="email">
                 <label class="titulo_login">Email</label><br>
                 <div class="ui input">
-                    <input type="email" class="form-control" id="input_email" name="input_email" placeholder="nome@email.com">
+                    <input type="email" class="form-control" id="input_email" name="input_email" placeholder="nome@email.com" required>
                 </div>
             </div>
             <div class="senha">
                 <label class="titulo_login">Senha</label><br>
-                <input type="password" class="form-control" id="input_senha" name="input_senha" placeholder="Digite a senha">
+                <input type="password" class="form-control" id="input_senha" name="input_senha" placeholder="Digite a senha" required>
             </div>
             <div class="campo_redefinir_senha">
                 <label class="esqueceu_senha">
@@ -32,6 +40,8 @@ include './template/modal-cadastrar.php';
                 <button type="submit" class="botao_login">Entrar</a>
             </div>
         </form>
+
+
     </div>
 </section>
 
