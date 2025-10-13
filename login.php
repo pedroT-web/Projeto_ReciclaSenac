@@ -19,22 +19,28 @@ include './template/modal-cadastrar.php';
             <h5>Somente os Administradores podem acessar o historico </h5>
 
             <div class="email">
-                <label class="titulo_login">Email</label><br>
+                <label class="titulo_login mb-1">Email</label>
                 <div class="ui input">
-                    <input type="email" class="form-control" id="input_email" name="input_email" placeholder="nome@email.com" required>
+                    <input type="email" class="form-control" id="input_email" name="input_email" onblur="fnValidarEmail()" placeholder="nome@email.com" required>
                 </div>
+                <span id="erroEmail"></span>
             </div>
             <div class="senha">
-                <label class="titulo_login">Senha</label><br>
-                <input type="password" class="form-control" id="input_senha" name="input_senha" placeholder="Digite a senha" required>
+                <label class="titulo_login mb-1">Senha</label>
+                <div class="container_senha">
+                    <input type="password" class="form-control input_login" id="input_senha" name="input_senha" placeholder="Digite a senha" onblur="fnValidarSenha()" required>
+                    <button type="button" id="visualizarSenha" onclick="fnVisualisarSenha()"><i id="olho" class="bi bi-eye fs-3"></i></button>
+                </div>
+                <!-- <i class="bi bi-eye-slash"></i> -->
+                <span id="erroSenha"></span>
             </div>
             <div class="campo_redefinir_senha">
                 <label class="esqueceu_senha">
                     Esqueceu a senha? <a class="link_redefinicao" data-bs-toggle="modal" data-bs-target="#modalRedefinirSenha">Redefinir</a>
                 </label>
-                <!-- <label class="cadastrar">
+                <label class="cadastrar">
                     Não tem cadastro? <a class="link_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrar">Cadastrar</a>
-                </label> -->
+                </label>
             </div>
             <div class="espacamento_enviar">
                 <button type="submit" class="botao_login">Entrar</a>
@@ -44,7 +50,7 @@ include './template/modal-cadastrar.php';
 
     </div>
 </section>
-
+<script src="./js/validacao.js"></script>
 <?php
 include    './template/footer.php';
 ?>

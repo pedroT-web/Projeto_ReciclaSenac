@@ -64,7 +64,7 @@ body {
     width: 100%;
 }
 
-.botao_cadastro{
+.botao_cadastro {
     color: white !important;
     background-color: #082036 !important;
 }
@@ -176,7 +176,7 @@ body {
 }
 
 /* Formatação dos input com lista */
-#id_funcionario,
+#select_funcionario,
 #input_data {
     font-family: "nunito";
     border: 1px solid rgba(34, 36, 38, .15);
@@ -187,6 +187,10 @@ body {
 
     background-color: #fff;
     color: black;
+}
+
+.container_data {
+    margin-bottom: 100px !important;
 }
 
 /* Formatação dos itens dentro do input com lista */
@@ -373,7 +377,7 @@ select {
 
 /* Página  de Login */
 .pag_de_login {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
 
     display: flex;
@@ -382,7 +386,7 @@ select {
 }
 
 .fundo_login {
-    height: 450px;
+    height: 520px;
     width: 600px;
 
     border-radius: 15px;
@@ -442,6 +446,33 @@ select {
     width: 100%;
 }
 
+.container_senha {
+    position: relative;
+    display: flex;
+}
+
+.input_login {
+    z-index: 0 !important;
+}
+
+#visualizarSenha {
+    position: absolute;
+    top: 50%;
+    /* 50% da altura do container */
+    right: 12px;
+    transform: translateY(-50%);
+    /* puxa o olho para cima, retirando 50% do eixo y */
+    cursor: pointer;
+    z-index: 2;
+    background: none;
+    border: none;
+
+}
+
+#olho {
+    color: rgb(160, 160, 160);
+}
+
 .icone_de_login_2:hover {
     color: white;
 }
@@ -451,6 +482,7 @@ select {
 }
 
 .campo_redefinir_senha {
+    margin-top: 20px;
     padding-top: 10px;
     display: flex;
     justify-content: center;
@@ -535,21 +567,23 @@ select {
 
 }
 
-.acoes{
+.acoes {
     display: felx;
     justify-content: space-between;
     align-items: center;
 }
 
-.botao_deletar, .botao_edicao{
+.botao_deletar,
+.botao_edicao {
     text-decoration: none;
     font-size: 20px !important;
 }
 
-.botao_deletar{
+.botao_deletar {
     color: red;
 }
-.botao_edicao{
+
+.botao_edicao {
     color: var(--color-secundaria);
     margin-left: 10px;
 }
@@ -625,12 +659,14 @@ select {
     border: 2px solid #F7941E !important;
 }
 
-.container_label_inicio, .container_label_fim{
+.container_label_inicio,
+.container_label_fim {
     display: flex;
     align-items: center;
 }
 
-.label_periodo_inicio, .label_periodo_fim {
+.label_periodo_inicio,
+.label_periodo_fim {
     color: #072F54;
     font-size: 26px;
 }
@@ -705,6 +741,7 @@ select {
     cursor: pointer;
 }
 
+
 #fechar_botao:hover {
 
     border: 2px solid white;
@@ -714,7 +751,8 @@ select {
 
 }
 
-#salvar_senha, #cad_func {
+#salvar_senha,
+#cad_func {
     height: 40px;
     width: 100px;
     font-size: 18px;
@@ -757,8 +795,17 @@ select {
     margin-top: 15px;
 }
 
-.modais_cadastro{
+.modais_cadastro {
     cursor: pointer;
+}
+
+
+
+/* Borda de error */
+.erro {
+    border: 2px solid #f16f7c;
+    box-shadow: 0 0 8px #dc3545;
+    /* box-shadow: 0 0 8px #f16c79; */
 }
 
 /* ======================================== */
@@ -798,8 +845,10 @@ select {
 
     .fundo_login {
         width: 400px;
-        height: 500px;
+        height: 520px;
     }
+
+
 
     .local_historico {
         margin-left: 0;

@@ -13,7 +13,7 @@ $dataFim = $_GET['fimPeriodo'];
 $html = '';
 $html .= '<table border="1">';
 $html .= '<tr>';
-$html .= '<td colnspan="5"> Planilha de Histórico</ td>';
+$html .= '<td> Planilha de Histórico</ td>';
 $html .= '</tr>';
 
 // Colunas que terão na tabela

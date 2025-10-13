@@ -1,12 +1,11 @@
-
 <?php
-
 include './template/header.php';
 
 require 'config.php';
 
 date_default_timezone_set('America/Sao_Paulo'); // Define p fuso-horário
 $dataDiaria = date('Y-m-d'); // Coleta a data atual
+
 
 // Consulta da tabela de cadastro de peso com uma filtragem diária
 $scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data = :data";
@@ -31,32 +30,31 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
     <div class="row">
         <section class="espacamento_input col-sm-10 col-md-6 col-lg-6 col-10">
             <form method="POST" action="cadastrar-Pesagem.php" class="ms-4">
-                <div class="campo_funcionario">
+                <div class="campo_funcionario mb-5">
                     <label for="nome_funcionario">Nome Do Funcionário</label>
                     <br>
-                    <select class="campos_pag_peso ui search dropdow listas" id="id_funcionario" name="id_funcionario" required>
+                    <select class="campos_pag_peso ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarFuncionario()" required>
                         <option value="" disabled selected required>Selecione o Funcionário</option>
                         <?php foreach ($resultadoConsulta as $linhas) { ?>
-                            <option  value="<?= $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
+                            <option value="<?= $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
                         <?php } ?>
                     </select>
-                    <br><br><br>
+                    <span id="erroFuncionario"></span>
                 </div>
-                <div class="campo_tipo_material">
+                <div class="campo_tipo_material mb-5">
                     <label for="nome">Tipo Do Material</label>
                     <br>
-                    <div class="campos_pag_peso" id="input_material" required>
+                    <div class="campos_pag_peso input__materiais" id="input_material" required>
                         <?php foreach ($resultadoConsultaMaterial as $linhas_material) { ?>
-                            <input type="radio" id="tipo_material"  name="tipo_material"  value="<?= $linhas_material['id_material'] ?>" required><label><?= $linhas_material['nome_material'] ?></label>
+                            <input class="materiais ms-2" type="radio" id="tipo_material" name="tipo_material" value="<?= $linhas_material['id_material'] ?>" required><label><?= $linhas_material['nome_material'] ?></label>
                         <?php } ?>
-                        <label id="erro_peso"></label>
                     </div>
                 </div>
-                <div class="campo_peso">
+                <div class="campo_peso mb-5">
                     <label for="nome">Peso</label>
                     <br>
                     <div class="form-floating container_peso">
-                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" step="0.01" placeholder="Digite o peso" required>
+                        <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" step="0.01" placeholder="Digite o peso" onblur="fnValidarPeso()" required>
                         <label for="input_peso">Digite o Peso</label>
                         <select class="menu " name="tipo_peso" required>
                             <option value="">Tipo</option>
@@ -64,12 +62,14 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                             <option class="item" value="G">g</option>
                         </select>
                     </div>
-                </div><br><br>
-                <div class="listas">
+                    <span id="erroPeso"></span>
+                </div>
+                <div class="listas container_data mb-5">
                     <label for="data">Data</label>
                     <br>
-                    <input class="campo_data" type="date" value="<?= $dataDiaria ?>" id="input_data" name="input_data" placeholder="" required><br><br><br>
-                </div><br><br>
+                    <input class="campo_data" type="date" value="<?= $dataDiaria ?>" id="input_data" name="input_data" max="<?= $dataDiaria ?>" onblur="fnValidarData()" required>
+                    <span id="erroData"></span>
+                </div>
                 <div class="campo_botao_enviar">
                     <div class="ui button botao_enviar ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
                         <button type="submit" class="texto_enviar">Enviar</button>
@@ -93,7 +93,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                 <tbody>
                     <?php foreach ($resultadoConsultaDiaria as $cadastro_gerais) { ?>
                         <!-- transforma a data do banco em formato da nossa data, a cada item percorrido no foreach -->
-                         <!-- DateTime::CreateFromFormat / Cria um objeto de data no formato especifico que for informado, recebe em um formato e transforma em outro -->
+                        <!-- DateTime::CreateFromFormat / Cria um objeto de data no formato especifico que for informado, recebe em um formato e transforma em outro -->
                         <?php $data_formatada = DateTime::CreateFromFormat('Y-m-d', $cadastro_gerais['data'])->format('d/m/Y') ?>
                         <tr class="itens_tabela">
 
@@ -109,7 +109,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
     </div>
 </main>
 
-<script src="validacao.js"></script>
+<script src="./js/validacao.js"></script>
 
 <?php
 
