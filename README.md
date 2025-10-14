@@ -137,3 +137,41 @@ Projeto_ReciclaSenac/
    - Bootstrap ICONS. 
 - Servidor do Banco (Local):
    - XAMPP 
+
+
+# Validações
+
+# Cadastro de Peso
+### Funcionario
+- Campo Obrigatório
+  
+### Tipo do material
+- Campo Obrigatório
+  
+### Peso
+- Campo Obrigatório
+- Não pode conter letras
+- Até dois números após a vírgula
+
+### Tipo peso
+- Campo Obrigatório
+
+### Data
+- Não pode ser maior que a data atual
+- Campo obrigatório
+
+# Login
+### Email
+- Campo Obrigatório
+- Mínimo 20 caracteres
+- deve conter @ e .
+- Máximo de 100 caracteres
+  
+
+### Senha
+- Campo Obrigatório
+- Mínimo de 8 Caracteres
+- Máximo de 60 Caracteres
+- Deve conter pelo menos 1 letra maiúscula]
+- Deve conter pelo menos 1 caracter especial
+- Deve conter pelo menos 1 número

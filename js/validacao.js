@@ -6,13 +6,14 @@ function fnValidarPeso() {
 
     if (peso == "") {
         erroPeso.textContent = "O peso não pode ser vazio"
-        erroPeso.style.color = "red"
+        erroPeso.style.color = "#f16c79"
         inputPeso.classList.add('erro')
-    }
-    else if (regexLetras.test(peso)) {
+        inputPeso.focus()
+    } else if (regexLetras.test(peso)) {
         erroPeso.textContent = "O peso pode conter apenas números"
-        erroPeso.style.color = "red"
+        erroPeso.style.color = "#f16c79"
         inputPeso.classList.add('erro')
+        inputPeso.focus()
     } else {
         erroPeso.textContent = ""
         inputPeso.classList.remove("erro")
@@ -34,7 +35,6 @@ function fnValidarFuncionario() {
     } else {
         erroFuncionario.textContent = ""
         selectFuncionario.classList.remove('erro')
-
     }
 }
 
@@ -119,7 +119,7 @@ function fnValidarData() {
         erroData.textContent = "O ano não pode ser anterior"
         erroData.style.color = "#f16c79"
         inputData.classList.add("erro")
-    }else{
+    } else {
         erroData.textContent = ""
         inputData.classList.remove("erro")
     }

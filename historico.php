@@ -42,10 +42,10 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
             <div class="espacamento_historico">
                 <form method="POST" action="#" class="btn-group botoes_acesso_historico" role="group">
                     <div class="container_label_inicio">
-                        <label class="label_periodo_inicio me-2">De: </label><input type="date" id="inicio_periodo" name="inicio_periodo" class=" input_periodo" value="<?= $dataAtual ?>">
+                        <label class="label_periodo_inicio me-2">De: </label><input type="date" id="inicio_periodo" name="inicio_periodo" class=" input_periodo" value="<?= $dataAtual ?>" max="<?= $dataAtual ?>">
                     </div>
                     <div class="container_label_fim">
-                        <label class="label_periodo_fim me-2">Até: </label><input type="date" id="fim_periodo" name="fim_periodo" class=" input_periodo periodo_fim" value="<?= $dataAtual ?>">
+                        <label class="label_periodo_fim me-2">Até: </label><input type="date" id="fim_periodo" name="fim_periodo" class=" input_periodo periodo_fim" value="<?= $dataAtual ?>" max="<?= $dataAtual ?>">
                     </div>
                     <!-- Tentando armazenar o resultado da consulta para enviar para a página de gerar-excel.php -->
                     <!-- <input type="hidden" name="consultaPeriodo" value="<?= $resultadoConsulta ?>"> -->

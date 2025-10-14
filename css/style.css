@@ -392,18 +392,13 @@ select {
     border-radius: 15px;
 
     background-color: var(--color-principal);
-    box-shadow: 5px 3px 5px 3px rgba(0, 75, 141, 0.43);
+    box-shadow: 1px 1px 20px 7px rgba(0, 75, 141, 0.43);
     transition: 0.5s;
 }
 
 .container_login {
     display: flex;
     justify-content: center;
-}
-
-.fundo_login:hover {
-    transition: 0.5s;
-    scale: 1.03;
 }
 
 .fundo_login>h4 {
@@ -803,7 +798,7 @@ select {
 
 /* Borda de error */
 .erro {
-    border: 2px solid #f16f7c;
+    border: 2px solid #f16c79;
     box-shadow: 0 0 8px #dc3545;
     /* box-shadow: 0 0 8px #f16c79; */
 }
