@@ -624,13 +624,13 @@ select {
 }
 
 .botao_enviar_relatorio {
-    height: 50px;
     width: 200px;
 
     background-color: #072F54;
 
     border: none;
     transition: 0.5s;
+    padding: 12px;
 }
 
 .botao_enviar_relatorio:hover {
@@ -707,7 +707,9 @@ select {
 .cadastro {
     color: white !important;
 
-    padding-left: 100px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+
 }
 
 .redefinicao_senha>h5,

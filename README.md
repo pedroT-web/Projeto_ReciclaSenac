@@ -172,6 +172,21 @@ Projeto_ReciclaSenac/
 - Campo Obrigatório
 - Mínimo de 8 Caracteres
 - Máximo de 60 Caracteres
-- Deve conter pelo menos 1 letra maiúscula]
+- Deve conter pelo menos 1 letra maiúscula
 - Deve conter pelo menos 1 caracter especial
 - Deve conter pelo menos 1 número
+
+# Cadastro de funcionário
+- Campo Obrigatório
+- Mínimo de 5 caracteres
+- Máximo de 80 caracteres
+- Tem que conter pelo menos um espaço
+- Não pode conter número
+- Não pode conter caracteres especiais
+
+# Cadastro de material
+- Campo Obrigatório
+- Mínimo de 5 caracteres
+- Máximo de 20  caracteres
+- Não pode conter número
+- Não pode conter caracteres especiais

@@ -51,6 +51,7 @@ include './template/modal-cadastrar.php';
     </div>
 </section>
 <script src="./js/validacao.js"></script>
+<script src="./js/visualizarSenha.js"></script>
 <?php
 include    './template/footer.php';
 ?>

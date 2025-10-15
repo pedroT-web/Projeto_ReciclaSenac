@@ -1,7 +1,7 @@
 <?php
 session_start(); // Inicia a sessão
 // Verifica se o usuario não foi logado na sessão
-if(!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== TRUE){
+if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== TRUE) {
     // Redireciona para a página de login, enquanto o usuário não estiver logado na sessão
     header('location:./login.php');
     // Sair da sessão
@@ -18,7 +18,7 @@ require './config.php';
 date_default_timezone_set('America/Sao_Paulo');
 // Concede a data de hoje
 $dataAtual = date('Y-m-d');
-                                // Verifica se existe um valor se não ele atribui um valor "DEFAULT", no caso 0 -- mesma funcionalidade do isset
+// Verifica se existe um valor se não ele atribui um valor "DEFAULT", no caso 0 -- mesma funcionalidade do isset
 $dataInicio = $_POST['inicio_periodo'] ?? 0;
 $dataFim = $_POST['fim_periodo'] ?? 0;
 
@@ -33,10 +33,6 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
 ?>
 
 <section class="pag_historico">
-    <div class="dropdown">
-
-
-    </div>
     <div class="agrupamento_historico">
         <div class="local_historico">
             <div class="espacamento_historico">
@@ -70,7 +66,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                     <?php
                     if (empty($resultadoConsulta)) {
                         echo '<div class="alert alert-warning w-100 text-center" role="alert">
-                              Selecione um período para o histórico
+                              Período sem histórico
                             </div>';
                     } else { ?>
                         <?php foreach ($resultadoConsulta as $cadastro) { ?>
@@ -98,6 +94,9 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
         </div>
     </div>
 </section>
+
+<script src="./js/validacao.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php
 include './template/footer.php';

@@ -124,3 +124,102 @@ function fnValidarData() {
         inputData.classList.remove("erro")
     }
 }
+
+function fnValidarCadastroFuncionario() {
+    const inputCadFuncionario = document.getElementById('input_nome_func')
+    const cadFuncionario = inputCadFuncionario.value
+    const erroCadFuncionario = document.getElementById('erroFuncionario')
+    const regexNumero = /\d/
+    const regexCaracteresEspeciais = /[!@#$%&*()_+\-=\[\]{};':"\\|,.<>\/?]/
+    const espaco = /\s+/
+
+    if (cadFuncionario == "") {
+        erroCadFuncionario.textContent = "O Nome Não pode ser vazio"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else if (cadFuncionario.length < 5) {
+        erroCadFuncionario.textContent = "Mínimo de 5 caracteres"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else if (cadFuncionario.length > 80) {
+        erroCadFuncionario.textContent = "Máximo de 80 caracteres"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else if (!espaco.test(cadFuncionario)) {
+        erroCadFuncionario.textContent = "É necessário pelo menos 1 espaço"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else if (regexNumero.test(cadFuncionario)) {
+        erroCadFuncionario.textContent = "O Nome Não pode conter números"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else if (regexCaracteresEspeciais.test(cadFuncionario)) {
+        erroCadFuncionario.textContent = "O Nome Não pode conter caracteres especiais"
+        erroCadFuncionario.style.color = "#f16c79"
+        inputCadFuncionario.classList.add("erro")
+        inputCadFuncionario.focus()
+    } else {
+        erroCadFuncionario.textContent = ""
+        inputCadFuncionario.classList.remove("erro")
+    }
+}
+
+function fnValidarCadastroMaterial() {
+    const inputCadMaterial = document.getElementById("input_cad_material")
+    const cadMaterial = inputCadMaterial.value
+    const erroMaterial = document.getElementById("erroMaterial")
+    const regexNumero = /\d/
+    const regexCaracteresEspeciais = /[!@#$%&*()_+\-=\[\]{};':"\\|,.<>\/?]/
+
+    if (cadMaterial == "") {
+        erroMaterial.textContent = "O Material não pode ser vazio"
+        erroMaterial.style.color = "#f16c79"
+        inputCadMaterial.classList.add("erro")
+    } else if (cadMaterial.length < 5) {
+        erroMaterial.textContent = "Mínimo de 5 caracteres"
+        erroMaterial.style.color = "#f16c79"
+        inputCadMaterial.classList.add("erro")
+    } else if (cadMaterial.length > 20) {
+        erroMaterial.textContent = "Máximo de 20 caracteres"
+        erroMaterial.style.color = "#f16c79"
+        inputCadMaterial.classList.add("erro")
+    } else if (regexCaracteresEspeciais.test(cadMaterial)) {
+        erroMaterial.textContent = "O Material Não pode conter caracteres especiais"
+        erroMaterial.style.color = "#f16c79"
+        inputCadMaterial.classList.add("erro")
+    } else if (regexNumero.test(cadMaterial)) {
+        erroMaterial.textContent = "O Material Não pode conter números"
+        erroMaterial.style.color = "#f16c79"
+        inputCadMaterial.classList.add("erro")
+    } else {
+        erroMaterial.textContent = ""
+        inputCadMaterial.classList.remove("erro")
+    }
+}
+
+function fnValidarEnvioFuncionario(event) {
+
+    const valido = fnValidarCadastroFuncionario();
+
+    if (!valido) {
+
+        event.preventDefault();
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Preencha todos os campos corretamentes, antes de ser enviado",
+        });
+
+        return false;
+
+    }
+
+    return true;
+
+}

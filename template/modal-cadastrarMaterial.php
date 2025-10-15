@@ -8,8 +8,8 @@
             <div class="modal-body">
                 <div class="content cadastro">
                     <h5 class="titulos_forms">Material</h5>
-                    <input type="text" placeholder="Recíclavel" class="forms_cadastro_funcionario" name="input_material">
-                    <br>
+                    <input type="text" placeholder="Recíclavel" class="forms_cadastro_funcionario mb-2 w-100" name="input_cad_material" id="input_cad_material" onblur="fnValidarCadastroMaterial()">
+                    <span id="erroMaterial"></span>
                 </div>
             </div>
             <div class="modal-footer ">
