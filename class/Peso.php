@@ -16,13 +16,10 @@ class Peso
     public function fnSelecionarPorPeriodo($dataInicio, $dataFim)
     {
         $scriptConsultaGeral = "SELECT 
-                                    cad_peso.id, 
-                                    cad_peso.peso,
-                                    cad_peso.data, 
                                     tb_func.nome_do_funcionario, 
-                                    tb_func.id_funcionario, 
-                                    tb_mate.id_material, 
-                                    tb_mate.nome_material 
+                                    tb_mate.nome_material ,
+                                    cad_peso.peso,
+                                    cad_peso.data
                                 FROM 
                                     cadastro_de_peso AS cad_peso 
                                 INNER JOIN 
@@ -32,7 +29,7 @@ class Peso
                                     materiais AS tb_mate 
                                     ON tb_mate.id_material = cad_peso.id_material 
                                 WHERE 
-                                    data between :dataInicio AND :dataFim";
+                                    data between :dataInicio AND :dataFim ORDER BY data";
         $prepararScript = $this->conn->prepare($scriptConsultaGeral);
         $prepararScript->execute([
             ":dataInicio" => $dataInicio,
