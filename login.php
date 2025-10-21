@@ -14,7 +14,7 @@ include './template/modal-cadastrar.php';
             </div>';
         }
         ?>
-        <form class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12" method="POST" action="verificarAdmin.php">
+        <form class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12" method="POST" action="verificarAdmin.php" onsubmit="return fnValidarLogin(event)">
             <h4>Faça login</h4>
             <h5>Somente os Administradores podem acessar o historico </h5>
 
@@ -50,6 +50,8 @@ include './template/modal-cadastrar.php';
 
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/validacao.js"></script>
 <script src="./js/visualizarSenha.js"></script>
 <?php

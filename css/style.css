@@ -566,6 +566,8 @@ select {
     display: felx;
     justify-content: space-between;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .botao_deletar,

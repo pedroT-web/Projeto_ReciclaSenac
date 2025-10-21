@@ -59,7 +59,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                         <th>Tipo Material</th>
                         <th>Peso</th>
                         <th>Data</th>
-                        <th>Deletar</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody class="conteudo_historicos">
@@ -78,7 +78,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                                 <td class="text-center"><?= $cadastro['nome_material'] ?></td>
                                 <td class="text-center"><?= $cadastro['peso'] ?></td>
                                 <td class="text-center"><?= $data_formatada ?></td>
-                                <td class="acoes text-center"><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?= $cadastro['id'] ?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>&&deletar="><i class="icone_lixeira bi bi-trash3-fill"></i></a></td>
+                                <td class="acoes text-center"><a class="botao_edicao" onclick="editarCadastrosPeso(<?= $cadastro['id'] ?>)" data-bs-toggle="modal" data-bs-target="#modalEditarRegistro"><i class="icone_editar fs-4 bi bi-pencil-square"></i></a><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?= $cadastro['id']?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>&&deletar="><i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i></a></td>
                             </tr>
                     <?php }
                     } ?>
@@ -96,6 +96,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
 </section>
 
 <script src="./js/validacao.js"></script>
+<script src="./js/editarCadastros.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php

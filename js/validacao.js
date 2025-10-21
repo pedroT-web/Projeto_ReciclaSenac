@@ -17,6 +17,7 @@ function fnValidarPeso() {
     } else {
         erroPeso.textContent = ""
         inputPeso.classList.remove("erro")
+        return true;
     }
 
 }
@@ -35,8 +36,32 @@ function fnValidarFuncionario() {
     } else {
         erroFuncionario.textContent = ""
         selectFuncionario.classList.remove('erro')
+        return true;
     }
 }
+
+function fnValidarData() {
+    const inputData = document.getElementById("input_data");
+    const data = inputData.value
+    const erroData = document.getElementById("erroData")
+    const anoAtual = new Date().getFullYear();
+    const anoInput = new Date(data).getFullYear();
+
+    if (data == "") {
+        erroData.textContent = "A data não pode estar vazia"
+        erroData.style.color = "#f16c79"
+        inputData.classList.add("erro")
+    } else if (anoInput < anoAtual) {
+        erroData.textContent = "O ano não pode ser anterior"
+        erroData.style.color = "#f16c79"
+        inputData.classList.add("erro")
+    } else {
+        erroData.textContent = ""
+        inputData.classList.remove("erro")
+        return true;
+    }
+}
+
 
 function fnValidarEmail() {
     const inputEmail = document.getElementById("input_email")
@@ -63,6 +88,7 @@ function fnValidarEmail() {
     } else {
         erroEmail.textContent = ""
         inputEmail.classList.remove("erro")
+        return true;
     }
 }
 
@@ -101,29 +127,10 @@ function fnValidarSenha() {
     } else {
         erroSenha.textContent = ""
         inputSenha.classList.remove("erro")
+        return true;
     }
 }
 
-function fnValidarData() {
-    const inputData = document.getElementById("input_data");
-    const data = inputData.value
-    const erroData = document.getElementById("erroData")
-    const anoAtual = new Date().getFullYear();
-    const anoInput = new Date(data).getFullYear();
-
-    if (data == "") {
-        erroData.textContent = "A data não pode estar vazia"
-        erroData.style.color = "#f16c79"
-        inputData.classList.add("erro")
-    } else if (anoInput < anoAtual) {
-        erroData.textContent = "O ano não pode ser anterior"
-        erroData.style.color = "#f16c79"
-        inputData.classList.add("erro")
-    } else {
-        erroData.textContent = ""
-        inputData.classList.remove("erro")
-    }
-}
 
 function fnValidarCadastroFuncionario() {
     const inputCadFuncionario = document.getElementById('input_nome_func')
@@ -166,6 +173,7 @@ function fnValidarCadastroFuncionario() {
     } else {
         erroCadFuncionario.textContent = ""
         inputCadFuncionario.classList.remove("erro")
+        return true;
     }
 }
 
@@ -199,14 +207,15 @@ function fnValidarCadastroMaterial() {
     } else {
         erroMaterial.textContent = ""
         inputCadMaterial.classList.remove("erro")
+        return true;
     }
 }
 
 function fnValidarEnvioFuncionario(event) {
+    const validarFuncionario = fnValidarCadastroFuncionario();
 
-    const valido = fnValidarCadastroFuncionario();
 
-    if (!valido) {
+    if (!validarFuncionario) {
 
         event.preventDefault();
 
@@ -223,3 +232,62 @@ function fnValidarEnvioFuncionario(event) {
     return true;
 
 }
+
+function fnValidarEnvioMaterial(event) {
+    const validarPeso = fnValidarPeso();
+    const validarFuncionario = fnValidarFuncionario();
+    const validarData = fnValidarData();
+
+    if (!validarPeso || !validarFuncionario || !validarData) {
+        event.preventDefault();
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Preencha todos os campos corretamentes, antes de ser enviado",
+        });
+
+        return false;
+    }
+
+    return true
+}
+
+function fnValidarEnvioCadastroPeso(event) {
+    const validarMaterial = fnValidarCadastroMaterial();
+
+    if (!validarMaterial) {
+        event.preventDefault();
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Preencha todos os campos corretamentes, antes de ser enviado",
+        });
+
+        return false;
+    }
+
+    return true
+}
+
+function fnValidarLogin(event) { // event -- evento do formulário, no caso  o submit
+    const validarEmail = fnValidarEmail(); // armazenao retorno das funções, em true ou false
+    const validarSenha = fnValidarSenha();
+
+
+    if (!validarEmail || !validarSenha) { // valida se o retorno é true ou false
+        event.preventDefault(); // cancela o envio do fomulário
+
+        Swal.fire({ // alerta estilizado
+            icon: "error",
+            title: "Oops...",
+            text: "Preencha todos os campos corretamentes, antes de ser enviado",
+        });
+
+        return false;
+    }
+
+    return true
+}
+

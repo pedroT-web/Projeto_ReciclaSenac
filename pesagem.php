@@ -29,7 +29,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
 <main class="pagina_de_pesagem" id="pagina_de_pesagem">
     <div class="row">
         <section class="espacamento_input col-sm-10 col-md-6 col-lg-6 col-10">
-            <form method="POST" action="cadastrar-Pesagem.php" class="ms-4">
+            <form method="POST" action="cadastrar-Pesagem.php" class="ms-4" onsubmit="return fnValidarEnvioMaterial(event)">
                 <div class="campo_funcionario mb-5">
                     <label for="nome_funcionario">Nome Do Funcionário</label>
                     <br>
@@ -109,6 +109,7 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
     </div>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./js/validacao.js"></script>
 
 <?php

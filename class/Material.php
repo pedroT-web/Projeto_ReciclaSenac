@@ -22,4 +22,11 @@ class Material
             ":material" => $materialNovo
         ]);
     }
+
+    public function fnSelecionarMateriais(){
+        $select = "SELECT * FROM materiais";
+        $prepararSelect = $this->conn->query($select)->fetchAll();
+
+        return $prepararSelect;
+    }
 }

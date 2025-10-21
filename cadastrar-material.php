@@ -2,7 +2,9 @@
 include 'config.php';
 require './class/Material.php';
 
-$nomeMaterial = $_POST['input_material'];
+$nomeMaterial = $_POST['input_cad_material'];
+echo ($nomeMaterial);
+
 $material = new Material();
 
 
