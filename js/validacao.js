@@ -291,3 +291,13 @@ function fnValidarLogin(event) { // event -- evento do formulário, no caso  o s
     return true
 }
 
+function fnMensagemErro(event) {
+    event.preventDefault(); // cancela o envio do fomulário
+
+
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Usuário Não encontrado, verifique o email",
+    });
+}

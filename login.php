@@ -3,8 +3,18 @@ include './template/header.php';
 include './template/modal-redefinirSenha.php';
 include './template/modal-cadastrar.php';
 
+$erro = $_GET["mensagem_erro"] ?? null;
 ?>
 <section class="pag_de_login">
+    <!-- <div class="container">
+        <?php
+        if ($erro == 1) {
+            echo '<script>
+                fnMensagemErro()
+        </script>';
+        }
+        ?>
+    </div> -->
     <div class="row container_login">
         <?php
         // Verificando a requisição GET enviada pelo arquivo verificarAdmin para exibir a mensagem de erro ao usuário
@@ -46,8 +56,6 @@ include './template/modal-cadastrar.php';
                 <button type="submit" class="botao_login">Entrar</a>
             </div>
         </form>
-
-
     </div>
 </section>
 
