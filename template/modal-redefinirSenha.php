@@ -17,14 +17,14 @@
                     </div>
                     <div class="mb-4">
                         <h5 class="titulos_forms">Nova Senha</h5>
-                        <button type="button" id="" onclick="fnVisualiszarSenha()"><i id="olho" class="bi bi-eye fs-3"></i></button>
-                        <input type="password" placeholder="8 caracteres ou mais" class="forms_redefinicao" name="nova_senha_redefinicao">
+                        <button type="button" id="" onclick="fnVisualisarNovaSenha()"><i id="nova_senha_olho" class="bi bi-eye fs-3"></i></button>
+                        <input type="password" placeholder="8 caracteres ou mais" class="forms_redefinicao" id="input_nova_senha" name="nova_senha_redefinicao">
 
                     </div>
                     <div class="mb-4">
                         <h5 class="titulos_forms">Confirmar Senha</h5>
-                        <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao" name="conf_nova_senha_redefinicao">
-                        <button type="button"  onclick="fnVisualisarSenha()"><i id="olho" class="bi bi-eye fs-3"></i></button>
+                        <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao" id="input_confirmar_senha" name="conf_nova_senha_redefinicao">
+                        <button type="button"  onclick="fnVisualisarConfirmarSenha()"><i id="conf_senha_olho" class="bi bi-eye fs-3"></i></button>
                     </div>
                 </div>
             </div>

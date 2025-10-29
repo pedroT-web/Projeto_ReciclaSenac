@@ -56,11 +56,6 @@ $resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
                     <div class="form-floating container_peso">
                         <input class="form-control input_de_peso" name="input_peso" id="input_peso" type="number" step="0.01" placeholder="Digite o peso" onblur="fnValidarPeso()" required>
                         <label for="input_peso">Digite o Peso</label>
-                        <select class="menu " name="tipo_peso" id="tipo_peso" onblur="fnValidarTipoPeso()" required>
-                            <option value="">Tipo</option>
-                            <option class="item" value="KG">kg</option>
-                            <option class="item" value="G">g</option>
-                        </select>
                     </div>
                     <span id="erroPeso"></span>
                 </div>
