@@ -298,6 +298,6 @@ function fnMensagemErro(event) {
     Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Usuário Não encontrado, verifique o email",
+        text: "Usuário Não encontrado, verifique o email ou a senha atual",
     });
 }

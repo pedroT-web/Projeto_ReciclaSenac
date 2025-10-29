@@ -19,7 +19,7 @@
             </div>
             <div class="modal-footer ">
                 <div class="actions botoes_redefinir">
-                    <button id="fechar_botao" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                    <button type="button" id="fechar_botao" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
                     <button id="salvar_senha" type="">Enviar</button>
                 </div>
             </div>

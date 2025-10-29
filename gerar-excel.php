@@ -26,7 +26,7 @@ $html .= '<td> Planilha de Histórico</ td>';
 $html .= '</tr>';
 
 // Colunas que terão na tabela
-$cabecalho = ["Funcionario", "Material", "Peso", "Data"];
+$cabecalho = ["Funcionario", "Material", "Peso", "Data", "Soma Peso"];
 
 $resultado = fopen("php://output", "w");
 
@@ -35,6 +35,8 @@ fputcsv($resultado, $cabecalho, ";");
 
 // Consulta no banco
 $resultadoQuery = $peso->fnSelecionarPorPeriodo($dataInicio, $dataFim);
+
+$resultadoSomaReciclavel = $peso->fnSomarReciclavel($dataInicio, $dataFim);
 
 
 // Trazendo os dados do banco em formato de tabela, para trasformar em planilha
@@ -52,3 +54,7 @@ foreach ($resultadoQuery as $linha_cadastro) {
 
     fputcsv($resultado, $arrey, ";");
 }
+
+// foreach(){
+
+// }

@@ -58,4 +58,12 @@ class Peso
 
         return $prepararSelect->fetch();
     }
+
+    public function fnSomarReciclavel($inicio, $fim)
+    {
+        $soma = "SELECT SUM(peso) FROM cadastro_de_peso WHERE id_material = 1 AND  data BETWEEN $inicio  AND $fim ";
+        $prepararSoma = $this->conn->query($soma)->fetchAll();
+
+        return $prepararSoma;
+    }
 }

@@ -9,22 +9,22 @@
                 <div class="content redefinicao_senha">
                     <div class="mb-4">
                         <h5 class="titulos_forms">Email</h5>
-                        <input type="email" placeholder="Digite o seu Email" class="forms_redefinicao w-75" name="email_redefinicao">
+                        <input type="email" placeholder="Digite o seu Email" class="forms_redefinicao" name="email_redefinicao">
                     </div>
                     <div>
                         <h5 class="titulos_forms">Senha Atual</h5>
                         <input type="Text" placeholder="Digite a sua senha atual" class="forms_redefinicao" name="senha_redefinicao">
                     </div>
-                    <div class="mb-4">
+                    <div class="container_nova_senha mb-4">
                         <h5 class="titulos_forms">Nova Senha</h5>
-                        <button type="button" id="" onclick="fnVisualisarNovaSenha()"><i id="nova_senha_olho" class="bi bi-eye fs-3"></i></button>
                         <input type="password" placeholder="8 caracteres ou mais" class="forms_redefinicao" id="input_nova_senha" name="nova_senha_redefinicao">
+                        <button type="button" id="visualizar_nova_senha" onclick="fnVisualisarNovaSenha()"><i id="nova_senha_olho" class="bi bi-eye fs-3"></i></button>
 
                     </div>
-                    <div class="mb-4">
+                    <div class="container_nova_senha mb-4">
                         <h5 class="titulos_forms">Confirmar Senha</h5>
                         <input type="password" placeholder="Confirmar a nova senha" class="forms_redefinicao" id="input_confirmar_senha" name="conf_nova_senha_redefinicao">
-                        <button type="button"  onclick="fnVisualisarConfirmarSenha()"><i id="conf_senha_olho" class="bi bi-eye fs-3"></i></button>
+                        <button type="button" id="visualizar_confirmar_senha" onclick="fnVisualisarConfirmarSenha()"><i id="conf_senha_olho" class="bi bi-eye fs-3"></i></button>
                     </div>
                 </div>
             </div>
