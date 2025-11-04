@@ -78,7 +78,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                                 <td class="text-center"><?= $cadastro['nome_material'] ?></td>
                                 <td class="text-center"><?= $cadastro['peso'] ?></td>
                                 <td class="text-center"><?= $data_formatada ?></td>
-                                <td class="acoes text-center"><a class="botao_edicao" onclick="editarCadastrosPeso(<?= $cadastro['id'] ?>)" data-bs-toggle="modal" data-bs-target="#modalEditarRegistro" type="button"><i class="icone_editar fs-4 bi bi-pencil-square"></i></a><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?= $cadastro['id']?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>&&deletar="><i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i></a></td>
+                                <td class="acoes text-center"><a class="botao_edicao" onclick="editarCadastrosPeso(<?= $cadastro['id'] ?>)" data-bs-toggle="modal" data-bs-target="#modalEditarRegistro" type="button"><i class="icone_editar fs-4 bi bi-pencil-square"></i></a><a class="botao_deletar" href="./deletarRegistro.php?id_registro=<?= $cadastro['id'] ?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>&&deletar="><i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i></a></td>
                             </tr>
                     <?php }
                     } ?>
@@ -88,6 +88,9 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
         </div>
 
         <div class="campo_botao_enviar">
+            <div class="ui button deletar_periodo col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
+                <a type="button" href="deletarPeriodo.php?inicioPeriodo=<?= $dataInicio ?>&&fimPeriodo=<?= $dataFim ?>" class="btn btn-primary visible content botao_deletar_periodo">Deletar Período</a>
+            </div>
             <div class="ui button botao_relatorio ms-4 col-sm-8 col-md-6 col-lg-6 col-6" tabindex="0">
                 <a type="button" href="gerar-excel.php?inicioPeriodo=<?= $dataInicio ?>&&fimPeriodo=<?= $dataFim ?>" class="btn btn-primary visible content botao_enviar_relatorio">Gerar Relatório</a>
             </div>

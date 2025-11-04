@@ -307,7 +307,9 @@ select {
 /* Espaço onde está o botao enviar, para coloca-lo ao fim */
 .campo_botao_enviar {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+
+    margin: 50px 20px 0px 50px;
 }
 
 /* Formatacao para o titulo da pagina de pesagem */
@@ -635,17 +637,16 @@ select {
     justify-content: space-between;
 }
 
-.botao_relatorio {
+.botao_relatorio,
+.deletar_periodo {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: start !important;
 
     height: 50px;
     width: 200px;
 
-    margin-top: 45px !important;
-    margin-right: 25px !important;
-
+    margin: 0;
 }
 
 .botao_enviar_relatorio {
@@ -663,6 +664,20 @@ select {
     transition: 0.5s;
 }
 
+.botao_deletar_periodo {
+    width: 200px;
+
+    background-color: red;
+
+    border: none;
+    transition: 0.5s;
+    padding: 12px;
+}
+
+.botao_deletar_periodo:hover {
+    background-color: rgb(148, 1, 1);
+    transition: 0.5s;
+}
 
 .input_periodo {
     color: white !important;

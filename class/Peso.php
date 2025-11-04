@@ -61,9 +61,27 @@ class Peso
 
     public function fnSomarReciclavel($inicio, $fim)
     {
-        $soma = "SELECT SUM(peso) FROM cadastro_de_peso WHERE id_material = 1 AND  data BETWEEN $inicio  AND $fim ";
-        $prepararSoma = $this->conn->query($soma)->fetchAll();
+        $soma = "SELECT SUM(peso) AS totalSoma FROM cadastro_de_peso WHERE id_material = 1 AND  data BETWEEN :inicio AND :fim";
+        $prepararSoma = $this->conn->prepare($soma);
+        $prepararSoma->execute([
+            ":inicio" => $inicio,
+            ":fim" => $fim
+        ]);
+        $resultado = $prepararSoma->fetch();
 
-        return $prepararSoma;
+        return  $resultado["totalSoma"];
+    }
+
+    public function fnDeletarPeriodo($inicio, $fim)
+    {
+        $delete = "DELETE FROM cadastro_de_peso WHERE data BETWEEN :inicio AND :fim";
+        $prepararDeletePeriodo = $this->conn->prepare($delete);
+
+        $prepararDeletePeriodo->execute([
+            ":inicio" => $inicio,
+            ":fim" => $fim
+        ]);
+
+        return $prepararDeletePeriodo;
     }
 }

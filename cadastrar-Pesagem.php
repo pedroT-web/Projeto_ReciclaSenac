@@ -1,5 +1,4 @@
 <?php
-
 require 'config.php';
 
 $funcionario = $_POST['id_funcionario'];

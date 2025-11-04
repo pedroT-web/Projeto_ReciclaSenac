@@ -14,6 +14,11 @@ function fnValidarPeso() {
         erroPeso.style.color = "#f16c79"
         inputPeso.classList.add('erro')
         inputPeso.focus()
+    } else if (peso <= 0) {
+        erroPeso.textContent = "O peso não pode Menor ou igual a 0"
+        erroPeso.style.color = "#f16c79"
+        inputPeso.classList.add('erro')
+        inputPeso.focus()
     } else {
         erroPeso.textContent = ""
         inputPeso.classList.remove("erro")
