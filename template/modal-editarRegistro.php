@@ -21,7 +21,7 @@ $prepararSelect->execute([
 ]);
 $resultadoSelect = $prepararSelect->fetch();
 
-$resultadoSelectFuncionarios = $funcionario->fnSelecionarFuncionarios();
+$resultadoSelectFuncionarios = $funcionario->fnConsultarFuncionarios();
 
 $resultadoSelectMateriais = $material->fnSelecionarMateriais();
 ?>

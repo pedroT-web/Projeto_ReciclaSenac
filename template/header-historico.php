@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php /*session_start() */
+<?php
 include './template/modal-cadastrarFuncionario.php';
 include './template/modal-cadastrarMaterial.php';
 ?>
@@ -29,6 +29,7 @@ include './template/modal-cadastrarMaterial.php';
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item modais_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrarFuncionario">Cadastrar Funcionário</a></li>
                         <li><a class="dropdown-item modais_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrarMaterial">Cadastrar Material</a></li>
+                        <li><a class="dropdown-item modais_cadastro" href="./gerenciamentoCadastros.php">Gerenciar Cadastros</a></li>
                     </ul>
                 </div>
                 <ul class="paginas_header col-4">

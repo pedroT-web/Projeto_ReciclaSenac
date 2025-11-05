@@ -23,10 +23,14 @@ class Funcionario{
         return "Usuário Inserido Com Sucesso";
     }
 
-    public function fnSelecionarFuncionarios(){
+    public function fnConsultarFuncionarios(){
         $select = "SELECT * FROM tb_funcionarios";
         $prepararSelect = $this->conn->query($select)->fetchAll();
 
         return $prepararSelect;
+    }
+
+    public function fnDeletarFuncionario(){
+
     }
 }

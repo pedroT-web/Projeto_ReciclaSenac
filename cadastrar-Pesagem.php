@@ -17,3 +17,4 @@ $prepararInsert = $conn->prepare($inserirDados)->execute([
     ":data_cadastro" => $data
 ]);
 
+header("Location: ./pesagem.php");

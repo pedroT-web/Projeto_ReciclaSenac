@@ -239,11 +239,9 @@ function fnValidarEnvioFuncionario(event) {
 }
 
 function fnValidarEnvioMaterial(event) {
-    const validarPeso = fnValidarPeso();
-    const validarFuncionario = fnValidarFuncionario();
-    const validarData = fnValidarData();
+    const validarMaterial = fnValidarCadastroMaterial();
 
-    if (!validarPeso || !validarFuncionario || !validarData) {
+    if (!validarMaterial) {
         event.preventDefault();
 
         Swal.fire({
