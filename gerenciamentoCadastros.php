@@ -10,6 +10,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== TRUE)
 
 include("./template/header.php");
 require('./template/modal-editarFuncionario.php');
+require('./template/modal-editarMaterial.php');
 require './config.php';
 require './class/Funcionario.php';
 
@@ -78,10 +79,10 @@ $prepararMateriais = $conn->query($selectMateriais)->fetchAll()
                                 </td>
                                 <td scope="row acoes_gerenciamento">
                                     <div class="text-center">
-                                        <a class="botao_edicao" id="botaoEditarMaterial" type="button">
+                                        <a class="botao_edicao" data-bs-toggle="modal" data-bs-target="#modalEditarMaterial" id="botaoEditarMaterial" type="button">
                                             <i class="icone_editar fs-4 bi bi-pencil-square"></i>
                                         </a>
-                                        <a class="botao_deletar" id="botaoDeletarMaterial" href="./deletarFuncionario.php?idFuncionario=<?= $funcionarios["id_funcionario"] ?>">
+                                        <a class="botao_deletar"  id="botaoDeletarMaterial" href="./deletarFuncionario.php?idFuncionario=<?= $funcionarios["id_funcionario"] ?>">
                                             <i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i>
                                         </a>
                                     </div>
