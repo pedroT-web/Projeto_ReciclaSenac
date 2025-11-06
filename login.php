@@ -19,9 +19,9 @@ $erro = $_GET["mensagem_erro"] ?? null;
         <?php
         // Verificando a requisição GET enviada pelo arquivo verificarAdmin para exibir a mensagem de erro ao usuário
         if (isset($_GET['usuariologado']) && $_GET["usuariologado"] == 1) { // Mensagem para mostrar que o usuário está incorreto
-            echo '<div class="alert alert-danger w-100 text-center" role="alert">
-                    Administrador Não Encontrado
-            </div>';
+            echo '<script>
+                fnMensagemErro()
+                </script>';
         }
         ?>
         <form class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12" method="POST" action="verificarAdmin.php" onsubmit="return fnValidarLogin(event)">

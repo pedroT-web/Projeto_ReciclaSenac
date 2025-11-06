@@ -3,7 +3,7 @@ require 'config.php';
 require './class/Funcionario.php';
 
 $funcionario = new Funcionario();
-$nomeFunc = $_POST['input_nome_func'];
+$nomeFunc = ucwords($_POST['input_nome_func']);
 
 $funcionario->fnCadastrarFuncionario($nomeFunc);
 

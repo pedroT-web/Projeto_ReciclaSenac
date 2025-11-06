@@ -28,17 +28,17 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
 
 <div class="modal fade campo_cadastro" id="modalEditarRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form class="modal-content conteudo_modal" method="POST" action="editarMaterial.php">
+        <form class="modal-content conteudo_modal" method="POST" action="editarRegistro.php">
             <div class="modal-header header_cadastro">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Material</h1>
                 <button type="button" class="btn-close botao_X" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body row">
                 <div class="content cadastro col-6 mb-2">
-                    <input type="hidden" class="campoId">
+                    <input type="hidden" class="campoId" id="id_registro" name="id_registro">
                     <h5 class="titulos_forms">Material</h5>
-                    <select class="campos_pag_peso campoFuncionario ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarMaterial()" required>
-                        <option value="0" disabled selected required><?= $resultadoSelect['nome_material'] ?></option>
+                    <select class="campos_pag_peso campoMaterial  ui search dropdow listas" id="select_material" name="id_material" onblur="fnValidarMaterial()" required>
+                        <!-- <option value="0" disabled selected required><?= $resultadoSelect['nome_material'] ?></option> -->
                         <?php foreach ($resultadoSelectMateriais as $linhas) { ?>
                             <option value="<?= $linhas['id_material'] ?>"><?= $linhas['nome_material'] ?></option>
                         <?php } ?>
@@ -46,8 +46,8 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Funcionário</h5>
-                    <select class="campos_pag_peso ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarFuncionario()" required>
-                        <option value="0" disabled selected required><?= $resultadoSelect['nome_do_funcionario'] ?></option>
+                    <select class="campos_pag_peso campoFuncionario ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarFuncionario()" required>
+                        <!-- <option value="0" disabled selected required></option> -->
                         <?php foreach ($resultadoSelectFuncionarios as $linhas) { ?>
                             <option value="<?= $linhas['id_funcionario'] ?>"><?= $linhas['nome_do_funcionario'] ?></option>
                         <?php } ?>
@@ -56,18 +56,18 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Peso</h5>
                     <!-- <input type="text" value="<?= $resultadoSelect['peso'] ?>" class="forms_cadastro_funcionario campinhoPeso  w-100" name="input_material" onblur="fnValidarPeso()"> -->
-                    <input type="text" class="forms_cadastro_funcionario campoPeso  w-100" name="input_material" onblur="fnValidarPeso()">
+                    <input type="text" class="forms_cadastro_funcionario campoPeso  w-100" id="input_peso" name="input_peso" onblur="fnValidarPeso()">
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Data</h5>
-                    <input type="date" class="forms_cadastro_funcionario campoData w-100" id="input_material" name="input_material" onblur="fnValidarData()">
+                    <input type="date" class="forms_cadastro_funcionario campoData w-100" id="input_data" name="input_data" onblur="fnValidarData()">
                 </div>
 
             </div>
             <div class="modal-footer ">
                 <div class="actions botoes_redefinir">
                     <button id="fechar_botao" type="button" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
-                    <button type="submit" id="cad_func" name="cad_func">Cadastrar</button>
+                    <button type="submit" id="cad_func" name="cad_func">Atualizar</button>
                 </div>
             </div>
         </form>

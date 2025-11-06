@@ -63,7 +63,7 @@ function fnConfirmarDeleteFuncionario() {
 
             Swal.fire({
                 title: "Confirmação",
-                text: "Realmente deseja deletar o funcionario?",
+                text: "Realmente deseja desativar o funcionario?",
                 icon: "question",
                 showCancelButton: true,
                 confirmButtonColor: "#F7941E",

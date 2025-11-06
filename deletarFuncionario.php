@@ -1,12 +1,11 @@
 <?php
+require './class/Funcionario.php';
 require "./config.php";
+
+$funcionario = new Funcionario();
 
 $idFuncionario = $_GET["idFuncionario"];
 
-$delete = "DELETE FROM tb_funcionarios WHERE id_funcionario = :id";
-$prepararDelete = $conn->prepare($delete);
-$prepararDelete->execute([
-    ":id" => $idFuncionario
-]);
+$funcionario->fnDesativarFuncionario($idFuncionario);
 
 header("location: ./gerenciamentoCadastros.php");

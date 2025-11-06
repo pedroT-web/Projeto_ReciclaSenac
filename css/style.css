@@ -177,6 +177,8 @@ body {
 
 /* Formatação dos input com lista */
 #select_funcionario,
+#select_material,
+#selectStatus,
 #input_data {
     font-family: "nunito";
     border: 1px solid rgba(34, 36, 38, .15);

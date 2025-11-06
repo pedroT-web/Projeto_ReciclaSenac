@@ -1,6 +1,7 @@
 <?php
 include './template/header.php';
 require './class/Funcionario.php';
+require './class/Material.php';
 require 'config.php';
 
 date_default_timezone_set('America/Sao_Paulo'); // Define p fuso-horário
@@ -15,14 +16,14 @@ $dadosPreparado->execute([
 ]);
 $resultadoConsultaDiaria = $dadosPreparado->fetchAll();
 
-// Consulta da tabela de funcionarios para gerar a lista do input de funcionario com dados direto do banco 
+
 
 $funcionario = new Funcionario();
-$resultadoConsulta = $funcionario->fnConsultarFuncionarios();
+$resultadoConsulta = $funcionario->fnConsultarFuncionariosAtivos();
 
-// Consulta da tabela de materiais para gerar a lista do input de material com os dados do banco
-$scriptConsultaMaterial = "SELECT * FROM materiais";
-$resultadoConsultaMaterial = $conn->query($scriptConsultaMaterial)->fetchAll();
+$material = new Material();
+$resultadoConsultaMaterial = $material->fnSelecionarMateriais();
+
 
 ?>
 

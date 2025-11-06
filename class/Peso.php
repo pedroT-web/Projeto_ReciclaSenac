@@ -84,4 +84,18 @@ class Peso
 
         return $prepararDeletePeriodo;
     }
+
+    public function fnAtualizarPeso($id, $peso, $idFuncionario, $idMaterial, $data)
+    {
+        $update = "UPDATE cadastro_de_peso SET peso = :peso, id_funcionarios = :id_funcionario, id_material = :id_material, data = :data WHERE id = :id";
+        $prepararUpdate = $this->conn->prepare($update);
+
+        $prepararUpdate->execute([
+            ":id" => $id,
+            ":peso" => $peso,
+            ":id_funcionario" => $idFuncionario,
+            ":id_material" => $idMaterial,
+            ":data" => $data
+        ]);
+    }
 }
