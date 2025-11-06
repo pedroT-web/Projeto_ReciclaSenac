@@ -35,8 +35,9 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
             </div>
             <div class="modal-body row">
                 <div class="content cadastro col-6 mb-2">
+                    <input type="hidden" class="campoId">
                     <h5 class="titulos_forms">Material</h5>
-                    <select class="campos_pag_peso ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarMaterial()" required>
+                    <select class="campos_pag_peso campoFuncionario ui search dropdow listas" id="select_funcionario" name="id_funcionario" onblur="fnValidarMaterial()" required>
                         <option value="0" disabled selected required><?= $resultadoSelect['nome_material'] ?></option>
                         <?php foreach ($resultadoSelectMateriais as $linhas) { ?>
                             <option value="<?= $linhas['id_material'] ?>"><?= $linhas['nome_material'] ?></option>
@@ -54,11 +55,12 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Peso</h5>
-                    <input type="text" value="<?= $resultadoSelect['peso'] ?>" class="forms_cadastro_funcionario w-100" name="input_material" onblur="fnValidarPeso()">
+                    <!-- <input type="text" value="<?= $resultadoSelect['peso'] ?>" class="forms_cadastro_funcionario campinhoPeso  w-100" name="input_material" onblur="fnValidarPeso()"> -->
+                    <input type="text" class="forms_cadastro_funcionario campoPeso  w-100" name="input_material" onblur="fnValidarPeso()">
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Data</h5>
-                    <input type="date" value="<?= $resultadoSelect['data'] ?>" class="forms_cadastro_funcionario w-100" name="input_material" onblur="fnValidarData()">
+                    <input type="date" class="forms_cadastro_funcionario campoData w-100" id="input_material" name="input_material" onblur="fnValidarData()">
                 </div>
 
             </div>

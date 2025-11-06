@@ -79,7 +79,7 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                                 <td class="text-center"><?= $cadastro['peso'] ?></td>
                                 <td class="text-center"><?= $data_formatada ?></td>
                                 <td class="acoes text-center">
-                                    <a class="botao_edicao" onclick="editarCadastrosPeso(<?= $cadastro['id'] ?>)" data-bs-toggle="modal" data-bs-target="#modalEditarRegistro" type="button">
+                                    <a class="botao_edicao" data-bs-toggle="modal" data-bs-target="#modalEditarRegistro" type="button" data-bs-id="<?= $cadastro['id'] ?>" data-bs-peso="<?= $cadastro['peso'] ?>" data-bs-date="<?= $cadastro['data'] ?>" data-bs-funcionario="<?= $cadastro['nome_do_funcionario'] ?>">
                                         <i class="icone_editar fs-4 bi bi-pencil-square"></i>
                                     </a>
                                     <a class="botao_deletar" id="botaoDeletarRegistro" href="./deletarRegistro.php?id_registro=<?= $cadastro['id'] ?>&&dataInicio=<?= $dataInicio ?>&&dataFim=<?= $dataFim ?>">
@@ -109,6 +109,31 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
 <script src="./js/editarCadastros.js"></script>
 <script src="./js/confirmacoes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const modalEditar = document.getElementById('modalEditarRegistro')
+if (modalEditar) {
+  modalEditar.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget
+
+    const pegarId = button.getAttribute('data-bs-id')
+    const campoId = modalEditar.querySelector(".campoId")
+    campoId.value = pegarId
+
+    const pegarPeso = button.getAttribute('data-bs-peso')
+    const campoPeso = modalEditar.querySelector('.campoPeso')
+    campoPeso.value = pegarPeso
+
+    const pegarData = button.getAttribute('data-bs-date')
+    const campoData = modalEditar.querySelector('.campoData')
+    campoData.value = pegarData
+
+    const pegarFuncionario = button.getAttribute('data-bs-funcionario')
+    const campoFuncionario = modalEditar.querySelector('campoFuncionario')
+    campoFuncionario.value = pegarFuncionario
+  })
+}
+</script>
 
 <?php
 include './template/footer.php';
