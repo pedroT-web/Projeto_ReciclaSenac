@@ -476,12 +476,16 @@ select {
 }
 
 #visualizar_nova_senha,
-#visualizar_confirmar_senha {
+#visualizar_senha_atual,
+#visualizar_confirmar_senha,
+#visualizarConfirmarSenhaCadastro,
+#visualizarSenhaCadastro {
     position: absolute;
     top: 50%;
     /* 50% da altura do container */
     right: 12px;
     transform: translateY(10%);
+    color: #a0a0a0 !important;
     /* puxa o olho para cima, retirando 50% do eixo y */
     cursor: pointer;
     z-index: 2;

@@ -2,7 +2,7 @@
 require 'config.php';
 
 $email = $_POST["email_redefinicao"];
-$senha = $_POST["senha_redefinicao"];
+$senha = $_POST["inputSenhaAtual"];
 $novaSenha = $_POST["nova_senha_redefinicao"];
 $confirmarSenha = $_POST["conf_nova_senha_redefinicao"];
 

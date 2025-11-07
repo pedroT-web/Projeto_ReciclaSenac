@@ -1,6 +1,6 @@
 <?php
 
-class Admin
+class Administrador
 {
 
     private $conn;
@@ -20,7 +20,7 @@ class Admin
         $prepararConsulta = $this->conn->prepare($consulta);
         $prepararConsulta->execute([
             ":email" => $email,
-            ":senha"=> $senha
+            ":senha" => $senha
         ]);
 
         $usuario = $prepararConsulta->fetch();
@@ -32,5 +32,15 @@ class Admin
         } else {
             return false;
         }
+    }
+
+    function fnCadastrarAdmin($email, $senha)
+    {
+        $script = "INSERT INTO login_administrador(email, senha) VALUE (:email, :senha)";
+        $prepararScript = $this->conn->prepare($script);
+        $prepararScript->execute([
+            ":email" => $email,
+            ":senha" => $senha
+        ]);
     }
 }

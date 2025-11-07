@@ -1,15 +1,13 @@
 <?php
 require 'config.php';
+require './class/Administrador.php';
 
-//  Incompleto
 $email = $_POST["input_email"];
 $senha = $_POST["input_senha"];
 
-$script = "INSERT INTO login_administrador(email, senha) VALUE (:email, :senha)";
-$prepararScript = $conn->prepare($script);
-$prepararScript->execute([
-    ":email" => $email,
-    ":senha" => $senha
-]);
+$administrador = new Administrador();
 
+$administrador->fnCadastrarAdmin($email, $senha);
+
+header('location: ./login.php');
 

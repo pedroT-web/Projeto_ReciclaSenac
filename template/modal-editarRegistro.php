@@ -28,7 +28,7 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
 
 <div class="modal fade campo_cadastro" id="modalEditarRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <form class="modal-content conteudo_modal" method="POST" action="editarRegistro.php">
+        <form class="modal-content conteudo_modal" method="POST" action="editarRegistro.php" onsubmit="fnValidarAtualizacaoRegistro(event)">
             <div class="modal-header header_cadastro">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Material</h1>
                 <button type="button" class="btn-close botao_X" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -55,12 +55,13 @@ $resultadoSelectMateriais = $material->fnSelecionarMateriais();
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Peso</h5>
-                    <!-- <input type="text" value="<?= $resultadoSelect['peso'] ?>" class="forms_cadastro_funcionario campinhoPeso  w-100" name="input_material" onblur="fnValidarPeso()"> -->
-                    <input type="text" class="forms_cadastro_funcionario campoPeso  w-100" id="input_peso" name="input_peso" onblur="fnValidarPeso()">
+                    <input type="text" class="forms_cadastro_funcionario campoPeso  w-100" id="inputPeso" name="inputPeso" onblur="fnValidarAtualizacaoPeso()">
+                    <span id="erroNovoPeso"></span>
                 </div>
                 <div class="content cadastro col-6 mb-2">
                     <h5 class="titulos_forms">Data</h5>
-                    <input type="date" class="forms_cadastro_funcionario campoData w-100" id="input_data" name="input_data" onblur="fnValidarData()">
+                    <input type="date" class="forms_cadastro_funcionario campoData w-100" id="inputData" name="inputData" onblur="fnValidarAtualizacaoData()">
+                    <span id="erroNovaData"></span>
                 </div>
 
             </div>

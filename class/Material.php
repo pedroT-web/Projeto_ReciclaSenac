@@ -24,9 +24,27 @@ class Material
     }
 
     public function fnSelecionarMateriais(){
-        $select = "SELECT * FROM materiais";
+        $select = "SELECT * FROM materiais WHERE ativado = 'Ativo'";
         $prepararSelect = $this->conn->query($select)->fetchAll();
 
         return $prepararSelect;
+    }
+
+    public function fnAtualizarMaterial($id, $nomeMaterial, $status){
+        $update = "UPDATE materiais SET nome_material = :material, ativado = :status WHERE id_material = :id";
+        $prepararUpdate = $this->conn->prepare($update);
+        $prepararUpdate->execute([
+            ":id" => $id,
+            ":material" => $nomeMaterial,
+            ":status" => $status,
+        ]);
+    }
+
+    public function fnDesativarMaterial($idMaterial){
+        $desativar = "UPDATE materiais SET ativado = 'Desativo' WHERE id_material = :id";
+        $prepararDesativar = $this->conn->prepare($desativar);
+        $prepararDesativar->execute([
+            ":id" => $idMaterial
+        ]);
     }
 }

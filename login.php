@@ -3,25 +3,20 @@ include './template/header.php';
 include './template/modal-redefinirSenha.php';
 include './template/modal-cadastrar.php';
 
-$erro = $_GET["mensagem_erro"] ?? null;
 ?>
 <section class="pag_de_login">
-    <!-- <div class="container">
-        <?php
-        if ($erro == 1) {
-            echo '<script>
-                fnMensagemErro()
-        </script>';
-        }
-        ?>
-    </div> -->
     <div class="row container_login">
         <?php
         // Verificando a requisição GET enviada pelo arquivo verificarAdmin para exibir a mensagem de erro ao usuário
         if (isset($_GET['usuariologado']) && $_GET["usuariologado"] == 1) { // Mensagem para mostrar que o usuário está incorreto
-            echo '<script>
-                fnMensagemErro()
-                </script>';
+            echo '<div class="alert alert-danger text-center" role="alert">
+                    Nenhum Administrador encontrado!
+                </div>';
+        } 
+        if (isset($_GET["mensagem_erro"]) && $_GET["mensagem_erro"] == 1) {
+            echo '<div class="alert alert-danger text-center" role="alert">
+                    Administrador não encontrado, para fazer a redefinição de senha digite um administrador válido!
+                </div>';
         }
         ?>
         <form class="fundo_login col-sm-12 col-md-12 col-lg-12 col-12" method="POST" action="verificarAdmin.php" onsubmit="return fnValidarLogin(event)">

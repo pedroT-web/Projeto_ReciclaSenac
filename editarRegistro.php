@@ -5,13 +5,14 @@ require './class/Peso.php';
 $peso = new Peso();
 
 $idRegistro = $_POST["id_registro"];
-$novoPeso = $_POST["input_peso"];
+$novoPeso = $_POST["inputPeso"];
 $novoId_funcionario = $_POST['id_funcionario'];
 $novoId_material = $_POST['id_material'];
-$novaData = $_POST['input_data'];
+$novaData = $_POST['inputData'];
 
-// echo $idRegistro."\n".$novoId_funcionario ."\n". $novoId_material."\n". $novoPeso."\n".$novaData;
+$pesoFormatado = str_replace(',', '.', $novoPeso);
 
-$peso->fnAtualizarPeso($idRegistro, $novoPeso, $novoId_funcionario, $novoId_material, $novaData);
+
+$peso->fnAtualizarPeso($idRegistro, $pesoFormatado, $novoId_funcionario, $novoId_material, $novaData);
 
 header("Location: ./historico.php");
