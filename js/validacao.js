@@ -429,9 +429,13 @@ function fnValidarNovaSenha() {
 
     const inputConfirmarSenhaRedefinicao = document.getElementById("input_confirmar_senha");
     const confirmarSenhaValidar = inputConfirmarSenhaRedefinicao.value
+    const erroConfirmarSenhaRedefinicao = document.getElementById('erroConfirmarSenhaRedefinicao');
 
     if (novaSenhaValidar != confirmarSenhaValidar) {
-        return false;
+        erroConfirmarSenhaRedefinicao.textContent = "As Senha não coincidem, verifique a senha e digite novamente"
+        erroConfirmarSenhaRedefinicao.style.color = "#f16c79"
+        inputConfirmarSenhaRedefinicao.classList.add("erro")
+        inputConfirmarSenhaRedefinicao.focus();
     } else {
         return true;
     }
@@ -500,6 +504,54 @@ function fnValidarCadastroMaterial() {
         return true;
     }
 }
+
+function fnValidarEmailRedefinicao() {
+    const inputEmailCadastro = document.getElementById('inputEmailCadastro');
+    const emailCadastro = inputEmailCadastro.value
+    const erroEmailCadastro = document.getElementById('erroEmailCadastro');
+
+    if (emailCadastro == "") {
+        erroEmailCadastro.textContent = "O email não pode ser vazio"
+        erroEmailCadastro.style.color = "#f16c79"
+        inputEmailCadastro.classList.add("erro")
+    } else if (emailCadastro.length > 100) {
+        erroEmailCadastro.textContent = "O email pode ter até 100 caracteres"
+        erroEmailCadastro.style.color = "#f16c79"
+        inputEmailCadastro.classList.add("erro")
+    } else if (emailCadastro.length < 20) {
+        erroEmailCadastro.textContent = "O email deve ter no mínimo 20 caracteres"
+        erroEmailCadastro.style.color = "#f16c79"
+        inputEmailCadastro.classList.add("erro")
+    } else if (!regexEmail.test(emailCadastro)) {
+        erroEmailCadastro.textContent = "Email Inválido, deve conter @ e ."
+        erroEmailCadastro.style.color = "#f16c79"
+        inputEmailCadastro.classList.add("erro")
+    } else {
+        erroEmailCadastro.textContent = ""
+        inputEmailCadastro.classList.remove("erro")
+        return true;
+    }
+
+}
+
+function fnValidarSenhasCadastro() {
+    const inputSenhaCadastro = document.getElementById("inputSenhaCadastro");
+    const SenhaValidar = inputSenhaCadastro.value
+
+    const inputConfirmarSenhaCadastro = document.getElementById("inputConfirmarSenhaCadastro");
+    const confirmarSenhaValidar = inputConfirmarSenhaCadastro.value
+    const erroConfirmarSenhaCadastro = document.getElementById('erroConfirmarSenhaCadastro');
+
+    if (SenhaValidar != confirmarSenhaValidar) {
+        erroConfirmarSenhaCadastro.textContent = "As Senha não coincidem, verifique a senha e digite novamente"
+        erroConfirmarSenhaCadastro.style.color = "#f16c79"
+        inputConfirmarSenhaCadastro.classList.add("erro")
+        inputConfirmarSenhaCadastro.focus();
+    } else {
+        return true;
+    }
+}
+
 
 function fnValidarEnvioFuncionario(event) {
     const validarFuncionario = fnValidarCadastroFuncionario();
@@ -668,13 +720,36 @@ function fnValidarRedefinicaoSenha(event) {
 
 }
 
-function fnMensagemErro(event) {
-    event.preventDefault(); // cancela o envio do fomulário
+function fnValidarCadastro(event) {
+    // const validarEmailCadastro = fnValidarEmailRedefinicao();
+    // const validarSenhaCadastro = fnValidarSenhaAtualRedefinicao();
+    // const validarConfirmarSenhaCadastro = fnValidarNovaSenhaRedefinicao();
+    const validarSenhas = fnValidarSenhasCadastro();
 
+    if (!validarSenhas) {
 
-    Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Preencha todos os campos corretamentes, antes de ser enviado",
-    });
+        event.preventDefault();
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Preencha todos os campos corretamentes, antes de ser enviado",
+        });
+
+        return false;
+
+    }
+
+    return true;
 }
+
+// function fnMensagemErro(event) {
+//     event.preventDefault(); // cancela o envio do fomulário
+
+
+//     Swal.fire({
+//         icon: "error",
+//         title: "Oops...",
+//         text: "Preencha todos os campos corretamentes, antes de ser enviado",
+//     });
+// }

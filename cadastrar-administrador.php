@@ -3,7 +3,7 @@ require 'config.php';
 require './class/Administrador.php';
 
 $email = $_POST["input_email"];
-$senha = $_POST["input_senha"];
+$senha = $_POST["inputSenhaCadastro"];
 
 $administrador = new Administrador();
 
