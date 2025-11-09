@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php /*session_start() */ ?>
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +14,6 @@
 </head>
 
 <body>
-    <!-- Cabeçalho da página 1 -->
     <div class="row">
         <header class="cabecalho col-sm-12 col-md-12 col-lg-12 col-12">
             <nav class="itens_header">

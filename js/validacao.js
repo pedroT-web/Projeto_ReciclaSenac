@@ -506,9 +506,9 @@ function fnValidarCadastroMaterial() {
 }
 
 function fnValidarEmailRedefinicao() {
-    const inputEmailCadastro = document.getElementById('inputEmailCadastro');
+    const inputEmailCadastro = document.getElementById('email_redefinicao');
     const emailCadastro = inputEmailCadastro.value
-    const erroEmailCadastro = document.getElementById('erroEmailCadastro');
+    const erroEmailCadastro = document.getElementById('erroEmailRedefinicao');
 
     if (emailCadastro == "") {
         erroEmailCadastro.textContent = "O email não pode ser vazio"
@@ -612,15 +612,15 @@ function fnValidarEnvioCadastroPeso(event) {
 }
 
 
-function fnValidarLogin(event) { // event -- evento do formulário, no caso  o submit
-    const validarEmail = fnValidarEmail(); // armazenao retorno das funções, em true ou false
+function fnValidarLogin(event) { 
+    const validarEmail = fnValidarEmail(); 
     const validarSenha = fnValidarSenha();
 
 
-    if (!validarEmail || !validarSenha) { // valida se o retorno é true ou false
-        event.preventDefault(); // cancela o envio do fomulário
+    if (!validarEmail || !validarSenha) { 
+        event.preventDefault(); 
 
-        Swal.fire({ // alerta estilizado
+        Swal.fire({ 
             icon: "error",
             title: "Oops...",
             text: "Preencha todos os campos corretamentes, antes de ser enviado",
@@ -637,7 +637,7 @@ function fnValidarAtualizacaoRegistro(event) {
     const validarData = fnValidarAtualizacaoData()
 
     if (!validarPeso || !validarData) {
-        event.preventDefault(); // cancela o envio do fomulário
+        event.preventDefault();
 
 
         Swal.fire({
@@ -652,7 +652,7 @@ function fnValidarNovaAtualizacaoFuncionario(event) {
     const validarEdicaoFunc = fnValidarAtualizacaoFuncionario();
 
     if (!validarEdicaoFunc) {
-        event.preventDefault(); // cancela o envio do fomulário
+        event.preventDefault(); 
 
 
         Swal.fire({
@@ -667,7 +667,7 @@ function fnValidarNovaAtualizacaoMaterial(event) {
     const validarEdicaoMaterial = fnValidarAtualizacaoMaterial();
 
     if (!validarEdicaoMaterial) {
-        event.preventDefault(); // cancela o envio do fomulário
+        event.preventDefault();
 
 
         Swal.fire({
@@ -721,9 +721,6 @@ function fnValidarRedefinicaoSenha(event) {
 }
 
 function fnValidarCadastro(event) {
-    // const validarEmailCadastro = fnValidarEmailRedefinicao();
-    // const validarSenhaCadastro = fnValidarSenhaAtualRedefinicao();
-    // const validarConfirmarSenhaCadastro = fnValidarNovaSenhaRedefinicao();
     const validarSenhas = fnValidarSenhasCadastro();
 
     if (!validarSenhas) {
@@ -742,14 +739,3 @@ function fnValidarCadastro(event) {
 
     return true;
 }
-
-// function fnMensagemErro(event) {
-//     event.preventDefault(); // cancela o envio do fomulário
-
-
-//     Swal.fire({
-//         icon: "error",
-//         title: "Oops...",
-//         text: "Preencha todos os campos corretamentes, antes de ser enviado",
-//     });
-// }

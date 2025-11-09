@@ -3,8 +3,8 @@ require 'config.php';
 
 $funcionario = $_POST['id_funcionario'];
 $material = $_POST['tipo_material'];
-// str_replace($procura, $subistitui, nisso)
-$peso = str_replace(',', '.', $_POST['input_peso']); // ele vai subistituir o valor desejado, pelo valor informado
+
+$peso = str_replace(',', '.', $_POST['input_peso']); 
 $data = $_POST['input_data'];
 
 

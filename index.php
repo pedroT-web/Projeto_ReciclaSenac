@@ -4,7 +4,6 @@ include './template/header.php';
 
 ?>
 
-<!-- Página Inicial -->
 <main class="pagina_inicial" id="pagina_inicial">
     <div class="container_itens_pag_inicial">
         <div class="container_imagen">

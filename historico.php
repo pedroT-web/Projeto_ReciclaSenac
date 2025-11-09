@@ -1,10 +1,8 @@
 <?php
-session_start(); // Inicia a sessão
-// Verifica se o usuario não foi logado na sessão
+session_start();
+
 if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== TRUE) {
-    // Redireciona para a página de login, enquanto o usuário não estiver logado na sessão
     header('location:./login.php');
-    // Sair da sessão
     exit;
 }
 
@@ -14,11 +12,10 @@ include './template/modal-cadastrarFuncionario.php';
 include './template/modal-editarRegistro.php';
 require './config.php';
 
-// Define o fuso-horário
 date_default_timezone_set('America/Sao_Paulo');
-// Concede a data de hoje
+
 $dataAtual = date('Y-m-d');
-// Verifica se existe um valor se não ele atribui um valor "DEFAULT", no caso 0 -- mesma funcionalidade do isset
+
 $dataInicio = $_POST['inicio_periodo'] ?? 0;
 $dataFim = $_POST['fim_periodo'] ?? 0;
 
@@ -28,7 +25,7 @@ $preparaSelect->execute([
     ":data_inicio" => $dataInicio,
     ":data_fim" => $dataFim
 ]);
-$resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query em formato de arrey nomeado
+$resultadoConsulta = $preparaSelect->fetchAll();
 
 ?>
 
@@ -43,8 +40,6 @@ $resultadoConsulta = $preparaSelect->fetchAll(); // Exibir o resultado da query 
                     <div class="container_label_fim">
                         <label class="label_periodo_fim me-2">Até: </label><input type="date" id="fim_periodo" name="fim_periodo" class=" input_periodo periodo_fim" value="<?= $dataAtual ?>" max="<?= $dataAtual ?>">
                     </div>
-                    <!-- Tentando armazenar o resultado da consulta para enviar para a página de gerar-excel.php -->
-                    <!-- <input type="hidden" name="consultaPeriodo" value="<?= $resultadoConsulta ?>"> -->
                     <div>
                         <button type="submit" class="botao_gerar_historico">Gerar Historico</button>
                     </div>

@@ -4,18 +4,8 @@ require './class/Funcionario.php';
 require './class/Material.php';
 require 'config.php';
 
-date_default_timezone_set('America/Sao_Paulo'); // Define p fuso-horário
-$dataDiaria = date('Y-m-d'); // Coleta a data atual
-
-
-// Consulta da tabela de cadastro de peso com uma filtragem diária
-$scriptConsultaGeral = "SELECT cad_peso.id, cad_peso.peso,cad_peso.data, tb_func.nome_do_funcionario, tb_func.id_funcionario, tb_mate.id_material, tb_mate.nome_material FROM cadastro_de_peso AS cad_peso INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material WHERE data = :data";
-$dadosPreparado = $conn->prepare($scriptConsultaGeral);
-$dadosPreparado->execute([
-    ":data" => $dataDiaria
-]);
-$resultadoConsultaDiaria = $dadosPreparado->fetchAll();
-
+date_default_timezone_set('America/Sao_Paulo');
+$dataDiaria = date('Y-m-d');
 
 
 $funcionario = new Funcionario();
@@ -27,7 +17,6 @@ $resultadoConsultaMaterial = $material->fnSelecionarMateriais();
 
 ?>
 
-<!-- Página de Pesagem -->
 <main class="pagina_de_pesagem" id="pagina_de_pesagem">
     <div class="row">
         <section class="espacamento_input col-sm-10 col-md-6 col-lg-6 col-10">
@@ -89,8 +78,6 @@ $resultadoConsultaMaterial = $material->fnSelecionarMateriais();
                 </thead>
                 <tbody>
                     <?php foreach ($resultadoConsultaDiaria as $cadastro_gerais) { ?>
-                        <!-- transforma a data do banco em formato da nossa data, a cada item percorrido no foreach -->
-                        <!-- DateTime::CreateFromFormat / Cria um objeto de data no formato especifico que for informado, recebe em um formato e transforma em outro -->
                         <?php $data_formatada = DateTime::CreateFromFormat('Y-m-d', $cadastro_gerais['data'])->format('d/m/Y') ?>
                         <tr class="itens_tabela">
 

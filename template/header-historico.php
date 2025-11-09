@@ -17,7 +17,6 @@ include './template/modal-cadastrarMaterial.php';
 </head>
 
 <body>
-    <!-- Cabeçalho da página 1 -->
     <div class="row">
         <header class="cabecalho col-sm-12 col-md-12 col-lg-12 col-12">
             <nav class="itens_header">
@@ -25,7 +24,6 @@ include './template/modal-cadastrarMaterial.php';
                     <button class="btn dropdown-toggle col-4 ms-2 botao_cadastro" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Cadastros
                     </button>
-                    <!-- Dropdown do botão de cadastro, para acessar os modais de cadastro de funcionarios e materiais -->
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item modais_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrarFuncionario">Cadastrar Funcionário</a></li>
                         <li><a class="dropdown-item modais_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrarMaterial">Cadastrar Material</a></li>

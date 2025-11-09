@@ -7,8 +7,7 @@ include './template/modal-cadastrar.php';
 <section class="pag_de_login">
     <div class="row container_login">
         <?php
-        // Verificando a requisição GET enviada pelo arquivo verificarAdmin para exibir a mensagem de erro ao usuário
-        if (isset($_GET['usuariologado']) && $_GET["usuariologado"] == 1) { // Mensagem para mostrar que o usuário está incorreto
+        if (isset($_GET['usuariologado']) && $_GET["usuariologado"] == 1) {
             echo '<div class="alert alert-danger text-center" role="alert">
                     Nenhum Administrador encontrado!
                 </div>';
@@ -36,16 +35,15 @@ include './template/modal-cadastrar.php';
                     <input type="password" class="form-control input_login" id="input_senha" name="input_senha" placeholder="Digite a senha" onblur="fnValidarSenha()" required>
                     <button type="button" id="visualizarSenha" onclick="fnVisualisarSenha()"><i id="olho" class="bi bi-eye fs-3"></i></button>
                 </div>
-                <!-- <i class="bi bi-eye-slash"></i> -->
                 <span id="erroSenha"></span>
             </div>
             <div class="campo_redefinir_senha">
                 <label class="esqueceu_senha">
                     Esqueceu a senha? <a class="link_redefinicao" data-bs-toggle="modal" data-bs-target="#modalRedefinirSenha">Redefinir</a>
                 </label>
-                <label class="cadastrar">
+                <!-- <label class="cadastrar">
                     Não tem cadastro? <a class="link_cadastro" data-bs-toggle="modal" data-bs-target="#modalCadastrar">Cadastrar</a>
-                </label>
+                </label> -->
             </div>
             <div class="espacamento_enviar">
                 <button type="submit" class="botao_login">Entrar</a>

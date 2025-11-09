@@ -1,12 +1,9 @@
 <?php
-// Inicia uma sessão
 session_start();
 
 require './config.php';
 require './class/Administrador.php';
 
-// Ternários
-//    Condição                        Resultado se for true             resultado se for false
 $email = isset($_POST['input_email']) ? trim($_POST['input_email']) : FALSE;
 $senha = isset($_POST['input_senha']) ? trim($_POST['input_senha']) : FALSE;;
 

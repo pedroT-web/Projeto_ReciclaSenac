@@ -1,9 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== TRUE) {
-    // Redireciona para a página de login, enquanto o usuário não estiver logado na sessão
     header('location:./login.php');
-    // Sair da sessão
     exit;
 }
 

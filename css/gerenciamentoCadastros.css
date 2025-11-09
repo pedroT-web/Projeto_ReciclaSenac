@@ -1,13 +1,7 @@
 .secaoCadastros {
     width: 100%;
-    /* background-color: aqua; */
     height: 100%;
 }
-
-/* .itens_tabela_gerenciamento {
-    display: flex;
-    flex-direction: column;
-} */
 
 .tabela_funcionarios,
 .tabela_materiais {
@@ -22,11 +16,9 @@
 .tabela_funcionarios thead tr,
 .tabela_materiais thead tr {
     position: sticky;
-    /* fixa o cabeçalho */
+    
     top: 0;
-    /* fixa no topo do container */
     z-index: 10;
-    /* garante que fique acima das linhas */
 }
 
 .acoes_gerenciamento {

@@ -20,8 +20,6 @@ body {
 }
 
 
-/* ======================================== */
-/* Primeira Página */
 .pagina_inicial {
     display: flex;
     justify-content: center;
@@ -148,9 +146,6 @@ body {
     color: rgba(0, 75, 141, 0.43);
 }
 
-/* ======================================== */
-
-/* Página Pesagem */
 .pagina_de_pesagem {
     height: 100vh;
 }
@@ -160,7 +155,6 @@ body {
     color: white !important;
 }
 
-/* espacamento do input */
 .espacamento_input {
     padding-top: 50px;
     justify-content: center;
@@ -175,7 +169,7 @@ body {
     margin-top: 15px;
 }
 
-/* Formatação dos input com lista */
+
 #select_funcionario,
 #select_material,
 #selectStatus,
@@ -195,7 +189,7 @@ body {
     margin-bottom: 100px !important;
 }
 
-/* Formatação dos itens dentro do input com lista */
+
 #nome::placeholder {
     color: black;
     font-family: "nunito";
@@ -206,7 +200,6 @@ body {
     align-items: center;
 }
 
-/* lista do input peso, alinha os itens ao centro da div */
 .ui.labeled.input>.label:not(.corner) {
     display: flex;
     align-items: center;
@@ -219,7 +212,6 @@ input:focus {
     scale: 1.02;
 }
 
-/* Campo onde tem todo os itens do historico rápido na pagina de pesagem */
 .historico_pagina_pesagem {
     margin-top: 30px;
     color: white;
@@ -243,13 +235,10 @@ input:focus {
     border: 2px solid #072f54f3 !important;
 }
 
-/* Tabela da pagina pesagem, o quanto ela usa de espaço */
 .tabela_historico_rapido {
     max-height: 400px;
 }
 
-/* Itens das tabelas */
-/* Local dos Titulos */
 .ui.table thead th {
     background-color: var(--color-secundaria) !important;
     color: white !important;
@@ -258,7 +247,6 @@ input:focus {
     font-size: 18px;
 }
 
-/* Itens dentro da tabela */
 .itens_tabela {
     color: #072f54f3 !important;
     background-color: #f2f2f2 !important;
@@ -277,13 +265,11 @@ input:focus {
 }
 
 
-/* formatação dos textos de identificacao dos inputs */
 label {
     color: black;
     font-family: "nunito";
 }
 
-/* Formatação dos nomes dentro do input dos funcionarios  */
 select {
     appearance: none;
     background-color: #f2f2f2;
@@ -295,7 +281,6 @@ select {
 }
 
 
-/* Formatação do botao de enviar na pagina de pesagem */
 .botao_enviar {
     display: flex !important;
     align-items: center !important;
@@ -304,9 +289,7 @@ select {
     width: 150px;
 }
 
-/* Hover para quando o mouse passar por cima do botao enviar da pagina de pesagem */
 
-/* Espaço onde está o botao enviar, para coloca-lo ao fim */
 .campo_botao_enviar {
     display: flex;
     justify-content: space-between;
@@ -314,12 +297,10 @@ select {
     margin: 50px 20px 0px 50px;
 }
 
-/* Formatacao para o titulo da pagina de pesagem */
 .titulo {
     color: #072F54;
 }
 
-/* Deixar todos os inputs n pagina de pesagem do mesmo tamanho */
 .listas {
     width: 100% !important;
 }
@@ -377,9 +358,7 @@ select {
     text-align: center;
 }
 
-/* ======================================== */
 
-/* Página  de Login */
 .pag_de_login {
     height: 90vh;
     width: 100%;
@@ -464,10 +443,9 @@ select {
 #visualizarSenha {
     position: absolute;
     top: 50%;
-    /* 50% da altura do container */
     right: 12px;
     transform: translateY(-50%);
-    /* puxa o olho para cima, retirando 50% do eixo y */
+
     cursor: pointer;
     z-index: 2;
     background: none;
@@ -482,11 +460,10 @@ select {
 #visualizarSenhaCadastro {
     position: absolute;
     top: 50%;
-    /* 50% da altura do container */
     right: 12px;
     transform: translateY(10%);
     color: #a0a0a0 !important;
-    /* puxa o olho para cima, retirando 50% do eixo y */
+
     cursor: pointer;
     z-index: 2;
     background: none;
@@ -572,9 +549,7 @@ select {
     background-color: var(--color-secundaria);
 }
 
-/* ======================================== */
 
-/* Página Histórico */
 .pag_historico {
     height: 110vh;
 }
@@ -848,15 +823,12 @@ select {
 
 
 
-/* Borda de error */
 .erro {
     border: 2px solid #f16c79;
     box-shadow: 0 0 8px #dc3545;
     /* box-shadow: 0 0 8px #f16c79; */
 }
 
-/* ======================================== */
-/* Responsividade das páginas */
 
 @media screen and (max-width: 768px) {
     .container_imagen {

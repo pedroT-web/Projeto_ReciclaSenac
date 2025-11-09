@@ -5,7 +5,7 @@ function fnConfirmarDeletePeriodo() {
         return;
     } else {
         botao.addEventListener("click", function (evento) {
-            evento.preventDefault(); // Impede que o link seja seguido
+            evento.preventDefault();
 
             Swal.fire({
                 title: "Confirmação",
@@ -18,7 +18,7 @@ function fnConfirmarDeletePeriodo() {
                 cancelButtonText: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = botao.href; // Redireciona só se confirmar
+                    window.location.href = botao.href;
                 }
             });
         })
