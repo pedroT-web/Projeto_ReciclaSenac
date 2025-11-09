@@ -5,7 +5,7 @@ require './config.php';
 require './class/Administrador.php';
 
 $email = isset($_POST['input_email']) ? trim($_POST['input_email']) : FALSE;
-$senha = isset($_POST['input_senha']) ? trim($_POST['input_senha']) : FALSE;;
+$senha = isset($_POST['input_senha']) ? trim($_POST['input_senha']) : FALSE;
 
 $admin = new Administrador();
 
