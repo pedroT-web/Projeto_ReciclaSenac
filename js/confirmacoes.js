@@ -28,36 +28,64 @@ function fnConfirmarDeletePeriodo() {
 fnConfirmarDeletePeriodo();
 
 function fnConfirmarDeleteRegistro() {
-    const botaoDeletar = document.getElementById("botaoDeletarRegistro")
+    const botoesDeletar = document.querySelectorAll(".botao_deletar")
 
-    if (botaoDeletar == null) { return; }
+    if (botoesDeletar == null) { return; }
 
-    botaoDeletar.addEventListener("click", function (evento) {
-        evento.preventDefault();
+    botoesDeletar.forEach(botao => {
+        botao.addEventListener("click", function (evento) {
+            evento.preventDefault();
 
-        Swal.fire({
-            title: "Confirmação",
-            text: "Realmente deseja deletar este registro?",
-            icon: "question",
-            showCancelButton: true,
-            confirmButtonColor: "#F7941E",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Deletar",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = botaoDeletar.href;
-            }
+            Swal.fire({
+                title: "Confirmação",
+                text: "Realmente deseja deletar este registro?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#F7941E",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Deletar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = botao.href;
+                }
+            })
         })
-    })
+    });
 }
 fnConfirmarDeleteRegistro();
 
 function fnConfirmarDeleteFuncionario() {
-    const botaoDeletar = document.getElementById("botaoDeletarFuncionario")
-    if (botaoDeletar == null) {
+    const botoesDeletarFuncionario = document.querySelectorAll("botoes_deletar_funcionario")
+    if (botoesDeletarFuncionario == null) {
         return;
-    } else {
+    }
+
+    botoesDeletarFuncionario.forEach(botaoFuncionario => {
+        botaoFuncionario.addEventListener("click", function (evento) {
+            evento.preventDefault();
+
+            Swal.fire({
+                title: "Confirmação",
+                text: "Realmente deseja deletar este funcionario?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#F7941E",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Deletar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = botaoFuncionario.href;
+                }
+            })
+        })
+    });
+
+    botoesDeletarFuncionario.forEach((botaoFuncionario) => {
+
+
+
         botaoDeletar.addEventListener("click", function (evento) {
             evento.preventDefault();
 
@@ -76,6 +104,6 @@ function fnConfirmarDeleteFuncionario() {
                 }
             })
         })
-    }
+    })
 }
 fnConfirmarDeleteFuncionario();

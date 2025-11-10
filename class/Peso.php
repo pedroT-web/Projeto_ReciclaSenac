@@ -59,17 +59,22 @@ class Peso
         return $prepararSelect->fetch();
     }
 
-    public function fnSomarReciclavel($inicio, $fim)
+    public function fnSomarTodosMateriais($inicio, $fim)
     {
-        $soma = "SELECT SUM(peso) AS totalSoma FROM cadastro_de_peso WHERE id_material = 1 AND  data BETWEEN :inicio AND :fim";
-        $prepararSoma = $this->conn->prepare($soma);
-        $prepararSoma->execute([
+        $select = "SELECT m.nome_material, SUM(p.peso) AS totalSoma
+            FROM cadastro_de_peso p
+            INNER JOIN materiais m ON p.id_material = m.id_material
+            WHERE p.data BETWEEN :inicio AND :fim
+            GROUP BY m.id_material
+            ORDER BY m.nome_material";
+
+        $prepararSelect = $this->conn->prepare($select);
+        $prepararSelect->execute([
             ":inicio" => $inicio,
             ":fim" => $fim
         ]);
-        $resultado = $prepararSoma->fetch();
 
-        return  $resultado["totalSoma"];
+        return $prepararSelect->fetchAll();
     }
 
     public function fnDeletarPeriodo($inicio, $fim)

@@ -47,7 +47,7 @@ $prepararMateriais = $conn->query($selectMateriais)->fetchAll()
                                         <a class="botao_edicao" data-bs-toggle="modal" data-bs-target="#modalEditarFuncionario" id="botaoEditarFuncionario" data-bs-nomeFuncionario="<?= $funcionarios["nome_do_funcionario"] ?>" data-bs-idFuncionario="<?= $funcionarios["id_funcionario"] ?>" data-bs-status="<?= $funcionarios["ativado"] ?>" type="button">
                                             <i class="icone_editar fs-4 bi bi-pencil-square"></i>
                                         </a>
-                                        <a class="botao_deletar" id="botaoDeletarFuncionario" href="./deletarFuncionario.php?idFuncionario=<?= $funcionarios["id_funcionario"] ?>">
+                                        <a class="botao_deletar botoes_deletar_funcionario" id="botaoDeletarFuncionario" href="./deletarFuncionario.php?idFuncionario=<?= $funcionarios["id_funcionario"] ?>">
                                             <i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i>
                                         </a>
                                     </div>
@@ -84,7 +84,7 @@ $prepararMateriais = $conn->query($selectMateriais)->fetchAll()
                                         <a class="botao_edicao" data-bs-toggle="modal" data-bs-target="#modalEditarMaterial" id="botaoEditarMaterial" type="button" data-bs-idMaterial="<?= $material["id_material"] ?>" data-bs-nomeMaterial="<?= $material["nome_material"] ?>" data-bs-statuMaterial="<?= $material['ativado'] ?>">
                                             <i class="icone_editar fs-4 bi bi-pencil-square"></i>
                                         </a>
-                                        <a class="botao_deletar" id="botaoDeletarMaterial" href="./deletarMaterial.php?idMaterial=<?= $material["id_material"] ?>">
+                                        <a class="botao_deletar botoes_deletar_material" id="botaoDeletarMaterial" href="./deletarMaterial.php?idMaterial=<?= $material["id_material"] ?>">
                                             <i class="icone_lixeira fs-4 ms-3 bi bi-trash3-fill"></i>
                                         </a>
                                     </div>
