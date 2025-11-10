@@ -14,6 +14,18 @@ $resultadoConsulta = $funcionario->fnConsultarFuncionariosAtivos();
 $material = new Material();
 $resultadoConsultaMaterial = $material->fnSelecionarMateriais();
 
+$select = "SELECT 
+cad_peso.peso, cad_peso.data, 
+tb_func.nome_do_funcionario, 
+tb_mate.nome_material FROM cadastro_de_peso AS cad_peso 
+INNER JOIN tb_funcionarios AS tb_func ON tb_func.id_funcionario = cad_peso.id_funcionarios 
+INNER JOIN materiais AS tb_mate ON tb_mate.id_material = cad_peso.id_material 
+WHERE data = :data ORDER BY id";
+
+$resultadoConsultaDiaria = $conn->prepare($select);
+$resultadoConsultaDiaria->execute([
+ ":data" => $dataDiaria
+]);
 
 ?>
 
