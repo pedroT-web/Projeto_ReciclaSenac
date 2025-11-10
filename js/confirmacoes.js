@@ -81,29 +81,5 @@ function fnConfirmarDeleteFuncionario() {
             })
         })
     });
-
-    botoesDeletarFuncionario.forEach((botaoFuncionario) => {
-
-
-
-        botaoDeletar.addEventListener("click", function (evento) {
-            evento.preventDefault();
-
-            Swal.fire({
-                title: "Confirmação",
-                text: "Realmente deseja desativar o funcionario?",
-                icon: "question",
-                showCancelButton: true,
-                confirmButtonColor: "#F7941E",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Deletar",
-                cancelButtonText: "Cancelar"
-            }).then((resultado) => {
-                if (resultado.isConfirmed) {
-                    window.location.href = botaoDeletar.href
-                }
-            })
-        })
-    })
 }
 fnConfirmarDeleteFuncionario();
